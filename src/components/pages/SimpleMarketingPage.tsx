@@ -1,7 +1,5 @@
-import { ArrowRight, Play, Search } from "lucide-react";
-import Link from "next/link";
+import { Play, Search } from "lucide-react";
 
-import { BottomPromptCTA } from "@/components/layout/BottomPromptCTA";
 import { CardGrid } from "@/components/marketing/CardGrid";
 import { Faq } from "@/components/marketing/Faq";
 import { Hero } from "@/components/marketing/Hero";
@@ -58,15 +56,11 @@ function CareersPage({ page }: SimpleMarketingPageProps) {
               <article key={role.title} className="bolt-card p-6">
                 <h3 className="text-xl font-semibold text-foreground">{role.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">{role.description}</p>
-                <Link href="#start" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-foreground">
-                  View role <ArrowRight className="size-4" />
-                </Link>
               </article>
             ))}
           </div>
         </div>
       </section>
-      <BottomPromptCTA ctaLabel={page.ctaLabel ?? "Wrap your role"} />
     </>
   );
 }
@@ -233,7 +227,6 @@ function DefaultSimplePage({ page }: SimpleMarketingPageProps) {
         </section>
       ))}
       {page.faqs ? <Faq faqs={page.faqs} /> : null}
-      <BottomPromptCTA ctaLabel={page.ctaLabel ?? "Let's wrap"} />
     </>
   );
 }

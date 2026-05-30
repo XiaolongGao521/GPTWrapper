@@ -76,7 +76,7 @@ export function Hero({
           </p>
           {!showComposer ? (
             <Button asChild size="lg" className="mt-2 rounded-md bolt-blue-button">
-              <Link href="#start">
+              <Link href="/#start">
                 {ctaLabel}
                 <ArrowRight data-icon="inline-end" />
               </Link>

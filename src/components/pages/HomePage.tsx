@@ -1,6 +1,5 @@
 import { ArrowRight, BarChart3, Check, Database, KeyRound, Layers3, LockKeyhole, Play, Sparkles } from "lucide-react";
 
-import { BottomPromptCTA } from "@/components/layout/BottomPromptCTA";
 import { Hero } from "@/components/marketing/Hero";
 import { LogoStrip } from "@/components/marketing/LogoStrip";
 
@@ -265,12 +264,6 @@ export function HomePage() {
       <AgentPanels />
       <ScaleBand />
       <RoleBand />
-      <BottomPromptCTA
-        id="final-prompt"
-        title="Ready to wrap something amazing?"
-        description="Try it out and start building posture for free."
-        ctaLabel="Let's wrap"
-      />
     </>
   );
 }

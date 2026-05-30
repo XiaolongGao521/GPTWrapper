@@ -156,7 +156,6 @@ src/
       Header.tsx
       ResourcesMegaMenu.tsx
       Footer.tsx
-      BottomPromptCTA.tsx
 
     marketing/
       Hero.tsx
@@ -217,9 +216,6 @@ UseCaseBand
 StatsBand
   Joke credibility metrics
 
-BottomCTA
-  Repeated prompt composer
-
 Footer
   Logo
   Resources column
@@ -253,6 +249,7 @@ These are examples, not required strings. Keep all copy original and avoid copyi
 - Keep repeated cards at 8px border radius or less. The hero prompt composer and Resources mega menu may use a larger radius because they are primary surfaces.
 - Avoid cards inside cards.
 - Avoid visible text that explains UI mechanics, keyboard shortcuts, or design choices.
+- Avoid repeating the prompt composer as a bottom CTA section unless a user explicitly asks for that pattern.
 - Ensure all text fits inside its container on mobile and desktop.
 - Use stable dimensions for fixed-format controls like icon buttons, cards, prompt composers, stat tiles, and nav elements.
 - Do not scale font sizes directly with viewport width.
