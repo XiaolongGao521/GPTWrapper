@@ -1,19 +1,29 @@
+"use client";
+
+import { useState } from "react";
 import { Check } from "lucide-react";
 import Link from "next/link";
 
-import { Faq } from "@/components/marketing/Faq";
 import { JoinWaitlistButton } from "@/components/marketing/WaitlistDialog";
 import { Button } from "@/components/ui/button";
-import { sharedFaqs } from "@/content/faqs";
 import type { MarketingPage } from "@/content/types";
 import { cn } from "@/lib/utils";
+
+type BillingCycle = "monthly" | "annual";
+
+const billingOptions: { id: BillingCycle; label: string }[] = [
+  { id: "monthly", label: "Monthly" },
+  { id: "annual", label: "Annual" },
+];
 
 const tiers = [
   {
     id: "curious",
     name: "Curious",
-    price: "$0",
-    period: "",
+    pricing: {
+      monthly: { price: "$0", period: "" },
+      annual: { price: "$0", period: "" },
+    },
     description: "For proving the wrapper can carry the meeting.",
     cta: "Join Waitlist",
     href: "/#start",
@@ -29,8 +39,10 @@ const tiers = [
   {
     id: "serious",
     name: "Serious",
-    price: "$12",
-    period: "per month",
+    pricing: {
+      monthly: { price: "$12", period: "per month" },
+      annual: { price: "$104", period: "per year" },
+    },
     description: "For builders who want the same box to sound funded.",
     cta: "Join Waitlist",
     href: "/#start",
@@ -46,8 +58,10 @@ const tiers = [
   {
     id: "quit-your-day-job",
     name: "Quit Your Day Job",
-    price: "$28",
-    period: "per seat",
+    pricing: {
+      monthly: { price: "$28", period: "per seat / month" },
+      annual: { price: "$242", period: "per seat / year" },
+    },
     description: "For departments standardizing the obvious.",
     cta: "Join Waitlist",
     href: "/#start",
@@ -63,8 +77,10 @@ const tiers = [
   {
     id: "enterprise",
     name: "This is For My Day Job (Enterprise)",
-    price: "Custom",
-    period: "",
+    pricing: {
+      monthly: { price: "Custom", period: "" },
+      annual: { price: "Custom", period: "" },
+    },
     description: "For organizations that need confidence before surface area.",
     cta: "Talk to sales",
     href: "/enterprise",
@@ -84,22 +100,43 @@ type PricingPageProps = {
 };
 
 export function PricingPage({ page }: PricingPageProps) {
-  return (
-    <>
-      <section className="bolt-shell min-h-screen pb-20 pt-28">
-        <div className="container">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-semibold text-foreground md:text-5xl">Pricing</h1>
-            <p className="mt-3 text-sm text-muted-foreground">{page.subtitle}</p>
-            <div className="mx-auto mt-8 inline-flex rounded-md border border-border bg-card p-1">
-              <span className="rounded bg-[#158cff] px-4 py-1.5 text-sm font-medium text-white">Monthly</span>
-              <span className="px-4 py-1.5 text-sm font-medium text-muted-foreground">Yearly</span>
-            </div>
-            <p className="mt-3 text-xs font-medium text-muted-foreground">Save up to 28% with yearly wrapping</p>
-          </div>
+  const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
 
-          <div className="mt-12 grid gap-4 lg:grid-cols-4">
-            {tiers.map((tier) => (
+  return (
+    <section className="bolt-shell min-h-screen pb-20 pt-28">
+      <div className="container">
+        <div className="mx-auto max-w-2xl text-center">
+          <h1 className="text-4xl font-semibold text-foreground md:text-5xl">Pricing</h1>
+          <p className="mt-3 text-sm text-muted-foreground">{page.subtitle}</p>
+          <div
+            className="mx-auto mt-8 inline-flex rounded-md border border-border bg-card p-1"
+            aria-label="Billing cycle"
+          >
+            {billingOptions.map((option) => (
+              <button
+                key={option.id}
+                type="button"
+                className={cn(
+                  "rounded px-4 py-1.5 text-sm font-medium transition-colors",
+                  billingCycle === option.id
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground",
+                )}
+                aria-pressed={billingCycle === option.id}
+                onClick={() => setBillingCycle(option.id)}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+          <p className="mt-3 text-xs font-medium text-muted-foreground">Save up to 28% with annual wrapping</p>
+        </div>
+
+        <div className="mt-12 grid gap-4 lg:grid-cols-4">
+          {tiers.map((tier) => {
+            const price = tier.pricing[billingCycle];
+
+            return (
               <article
                 key={tier.id}
                 className={cn(
@@ -119,9 +156,9 @@ export function PricingPage({ page }: PricingPageProps) {
                   ) : null}
                 </div>
                 <div className="mt-8">
-                  <span className="text-4xl font-semibold text-foreground">{tier.price}</span>
-                  {tier.period ? (
-                    <span className="ml-2 text-xs leading-4 text-muted-foreground">{tier.period}</span>
+                  <span className="text-4xl font-semibold text-foreground">{price.price}</span>
+                  {price.period ? (
+                    <span className="ml-2 text-xs leading-4 text-muted-foreground">{price.period}</span>
                   ) : null}
                 </div>
                 {tier.waitlist ? (
@@ -164,11 +201,10 @@ export function PricingPage({ page }: PricingPageProps) {
                   </ul>
                 </div>
               </article>
-            ))}
-          </div>
+            );
+          })}
         </div>
-      </section>
-      <Faq faqs={sharedFaqs} />
-    </>
+      </div>
+    </section>
   );
 }

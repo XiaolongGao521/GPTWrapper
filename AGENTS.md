@@ -190,6 +190,11 @@ Do not add new page templates unless the current templates cannot express the co
 - `/enterprise` intentionally uses an oversized, viewport-filling prompt composer that starts below the hero headline and occupies nearly the full remaining first-screen width and height.
 - Keep this oversized composer scoped to the Enterprise page unless the user explicitly asks to resize the shared prompt surface across the site.
 
+## Pricing Page
+
+- `/pricing` should stay focused on pricing options only. Do not append shared FAQ, generic marketing bands, prompt CTAs, or secondary page sections unless the user explicitly asks.
+- The Monthly/Annual billing selector must be interactive and visibly update the recurring plan prices.
+
 ## Homepage Layout
 
 The homepage should follow this Bolt-inspired structure:
