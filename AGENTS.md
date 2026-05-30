@@ -186,7 +186,7 @@ The homepage should follow this Bolt-inspired structure:
 Header
   Logo
   Navigation: Community, Enterprise, Resources, Careers, Pricing
-  Actions: Get started
+  Actions: Join Waitlist
 
 Hero
   Large centered headline
@@ -297,6 +297,14 @@ Future behavior, if requested:
 - Add a tiny API route for real OpenAI integration.
 - Keep the landing-page architecture unchanged.
 - Do not add auth, database, dashboards, or complex state unless explicitly requested.
+
+## Waitlist CTA
+
+- Header and pricing "Join Waitlist" actions open a local simulated waitlist modal; they do not navigate to a route or call a backend.
+- Persistent waitlist state lives in `localStorage` under `gptwrapper-waitlist-v1`.
+- The modal should show the user's local position, render no more than 10 person-like figures, and show `XXX more waiting` before the visible queue when the local position is greater than 10.
+- The joining user is the red person at the end of the visible queue; the existing visible waitlist people are white.
+- Do not replace informational docs/help "Get started" copy with waitlist behavior unless the user explicitly asks.
 
 ## Implementation Bias
 

@@ -2,6 +2,7 @@ import { Check } from "lucide-react";
 import Link from "next/link";
 
 import { Faq } from "@/components/marketing/Faq";
+import { JoinWaitlistButton } from "@/components/marketing/WaitlistDialog";
 import { Button } from "@/components/ui/button";
 import { sharedFaqs } from "@/content/faqs";
 import type { MarketingPage } from "@/content/types";
@@ -13,8 +14,9 @@ const tiers = [
     price: "$0",
     period: "",
     description: "For proving the wrapper can carry the meeting.",
-    cta: "Get started",
+    cta: "Join Waitlist",
     href: "/#start",
+    waitlist: true,
     featured: false,
     features: [
       "Starter prompt wrapping",
@@ -28,8 +30,9 @@ const tiers = [
     price: "$12",
     period: "per month",
     description: "For builders who want the same box to sound funded.",
-    cta: "Get started",
+    cta: "Join Waitlist",
     href: "/#start",
+    waitlist: true,
     featured: true,
     features: [
       "Advanced wrapper modes",
@@ -43,8 +46,9 @@ const tiers = [
     price: "$28",
     period: "per seat",
     description: "For departments standardizing the obvious.",
-    cta: "Get started",
+    cta: "Join Waitlist",
     href: "/#start",
+    waitlist: true,
     featured: false,
     features: [
       "Shared wrapper language",
@@ -60,6 +64,7 @@ const tiers = [
     description: "For organizations that need confidence before surface area.",
     cta: "Talk to sales",
     href: "/enterprise",
+    waitlist: false,
     featured: false,
     features: [
       "Governance narrative",
@@ -115,18 +120,34 @@ export function PricingPage({ page }: PricingPageProps) {
                     <span className="ml-2 text-xs leading-4 text-muted-foreground">{tier.period}</span>
                   ) : null}
                 </div>
-                <Button
-                  asChild
-                  className={cn(
-                    "mt-6 h-9 w-full rounded-md text-sm font-medium",
-                    tier.featured
-                      ? "bolt-blue-button"
-                      : "border-border bg-secondary text-foreground hover:bg-muted",
-                  )}
-                  variant={tier.featured ? "default" : "outline"}
-                >
-                  <Link href={tier.href}>{tier.cta}</Link>
-                </Button>
+                {tier.waitlist ? (
+                  <JoinWaitlistButton
+                    data-testid={`pricing-${tier.name.toLowerCase()}-join-waitlist`}
+                    className={cn(
+                      "mt-6 h-9 w-full rounded-md text-sm font-medium",
+                      tier.featured
+                        ? "bolt-blue-button"
+                        : "border-border bg-secondary text-foreground hover:bg-muted",
+                    )}
+                    variant={tier.featured ? "default" : "outline"}
+                  >
+                    {tier.cta}
+                  </JoinWaitlistButton>
+                ) : (
+                  <Button
+                    asChild
+                    data-testid="pricing-enterprise-talk-sales"
+                    className={cn(
+                      "mt-6 h-9 w-full rounded-md text-sm font-medium",
+                      tier.featured
+                        ? "bolt-blue-button"
+                        : "border-border bg-secondary text-foreground hover:bg-muted",
+                    )}
+                    variant={tier.featured ? "default" : "outline"}
+                  >
+                    <Link href={tier.href}>{tier.cta}</Link>
+                  </Button>
+                )}
                 <div className="mt-7 border-t border-border pt-5">
                   <p className="text-xs font-medium text-muted-foreground">You get:</p>
                   <ul className="mt-4 grid gap-3">
