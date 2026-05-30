@@ -5,6 +5,7 @@ import { BottomPromptCTA } from "@/components/layout/BottomPromptCTA";
 import { CardGrid } from "@/components/marketing/CardGrid";
 import { Faq } from "@/components/marketing/Faq";
 import { Hero } from "@/components/marketing/Hero";
+import { PromptComposer } from "@/components/marketing/PromptComposer";
 import { SectionHeading } from "@/components/marketing/SectionHeading";
 import { Button } from "@/components/ui/button";
 import type { MarketingPage } from "@/content/types";
@@ -13,59 +14,22 @@ type SimpleMarketingPageProps = {
   page: MarketingPage;
 };
 
-function EnterprisePage({ page }: SimpleMarketingPageProps) {
+function EnterprisePage() {
   return (
-    <>
-      <section className="relative min-h-screen overflow-hidden bg-background pb-16 pt-24">
-        <div className="blue-orbit" aria-hidden="true" />
-        <div className="container relative">
-          <div className="mx-auto max-w-5xl text-center">
-            <h1 className="text-5xl font-medium leading-tight text-foreground md:text-7xl">
-              {page.title}
-            </h1>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-muted-foreground">{page.subtitle}</p>
-            <div className="mx-auto mt-10 max-w-3xl rounded-lg border border-border bg-card p-3 shadow-[0_26px_90px_rgb(0_0_0_/_0.18)]">
-              <div className="relative overflow-hidden rounded-md bg-secondary">
-                <div className="bolt-horizon !top-[13rem]" aria-hidden="true" />
-                <div className="relative grid min-h-[260px] place-items-center p-6">
-                  <div className="w-full max-w-md rounded-xl border border-border bg-card p-4">
-                    <p className="text-left text-sm text-muted-foreground">What will you wrap today?</p>
-                    <div className="mt-8 flex items-center justify-between">
-                      <span className="text-xs text-muted-foreground">Plan</span>
-                      <span className="rounded-full bg-[#158cff] px-4 py-2 text-xs font-medium text-white">Build now</span>
-                    </div>
-                  </div>
-                  <button className="absolute left-1/2 top-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-border bg-background/30 text-foreground backdrop-blur">
-                    <Play className="size-6 fill-current" />
-                  </button>
-                </div>
-              </div>
-              <div className="mt-3 flex flex-col gap-3 border-t border-border pt-3 sm:flex-row sm:items-center">
-                <span className="text-xs text-muted-foreground">Schedule a wrapper review</span>
-                <input className="h-9 flex-1 rounded-md border border-border bg-background px-3 text-sm text-foreground outline-none placeholder:text-muted-foreground" placeholder="Your work email" />
-                <Button className="h-9 rounded-md bolt-blue-button px-5">Submit</Button>
-              </div>
-            </div>
-          </div>
-          <div className="mt-14 grid grid-cols-2 gap-6 text-center text-sm font-semibold text-muted-foreground md:grid-cols-6">
-            {["Acme", "Hubsync", "Metaform", "Move.ai", "Inteleaf", "Salesforth"].map((logo) => (
-              <span key={logo}>{logo}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="page-band py-24">
-        <div className="container grid gap-8 lg:grid-cols-3">
-          {page.sections[0]?.items?.map((item) => (
-            <article key={item.title} className="bolt-card p-6">
-              <h2 className="text-xl font-semibold text-foreground">{item.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-muted-foreground">{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-      {page.faqs ? <Faq faqs={page.faqs} /> : null}
-    </>
+    <section className="relative grid min-h-screen place-items-center overflow-hidden bg-background px-4 pb-20 pt-28">
+      <div className="blue-orbit" aria-hidden="true" />
+      <div className="bolt-horizon !top-[58%]" aria-hidden="true" />
+      <div className="container relative text-center">
+        <h1 className="mx-auto max-w-4xl text-balance text-5xl font-medium leading-tight text-foreground md:text-7xl">
+          Bigger Box for Big Companies
+        </h1>
+        <PromptComposer
+          className="mt-10 max-w-4xl"
+          placeholder="Describe the enterprise wrapper your organization can approve..."
+          submitLabel="Wrap for enterprise"
+        />
+      </div>
+    </section>
   );
 }
 
@@ -276,7 +240,7 @@ function DefaultSimplePage({ page }: SimpleMarketingPageProps) {
 
 export function SimpleMarketingPage({ page }: SimpleMarketingPageProps) {
   if (page.slug === "enterprise") {
-    return <EnterprisePage page={page} />;
+    return <EnterprisePage />;
   }
 
   if (page.slug === "careers") {
