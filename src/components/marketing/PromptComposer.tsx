@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 
 type PromptComposerProps = {
   className?: string;
+  textareaClassName?: string;
   placeholder?: string;
   submitLabel?: string;
   compact?: boolean;
@@ -19,6 +20,7 @@ type ComposerStatus = "idle" | "loading" | "done";
 
 export function PromptComposer({
   className,
+  textareaClassName,
   placeholder = "Let's wrap a customer portal where users can...",
   submitLabel = "Let's wrap",
   compact = false,
@@ -86,6 +88,7 @@ export function PromptComposer({
         className={cn(
           "min-h-[98px] resize-none border-0 bg-transparent px-6 py-5 text-[15px] leading-6 text-foreground shadow-none placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0",
           compact && "min-h-[58px] px-4 py-3 text-sm",
+          textareaClassName,
         )}
       />
       <div className="flex flex-col gap-3 px-4 pb-4 sm:flex-row sm:items-center sm:justify-between">

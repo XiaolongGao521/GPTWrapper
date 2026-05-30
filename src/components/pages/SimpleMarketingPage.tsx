@@ -14,18 +14,21 @@ type SimpleMarketingPageProps = {
 
 function EnterprisePage() {
   return (
-    <section className="relative grid min-h-screen place-items-center overflow-hidden bg-background px-4 pb-20 pt-28">
+    <section className="relative flex min-h-screen overflow-hidden bg-background px-4 pb-6 pt-28 md:pb-8">
       <div className="blue-orbit" aria-hidden="true" />
       <div className="bolt-horizon !top-[58%]" aria-hidden="true" />
-      <div className="container relative text-center">
-        <h1 className="mx-auto max-w-4xl text-balance text-5xl font-medium leading-tight text-foreground md:text-7xl">
-          Bigger Box for Big Companies
+      <div className="relative mx-auto flex min-h-0 w-full flex-1 flex-col text-center">
+        <h1 className="mx-auto max-w-5xl text-balance text-4xl font-medium leading-tight text-foreground sm:text-5xl md:text-7xl">
+          We Made The Box Bigger for Big Companies
         </h1>
-        <PromptComposer
-          className="mt-10 max-w-4xl"
-          placeholder="Describe the enterprise wrapper your organization can approve..."
-          submitLabel="Wrap for enterprise"
-        />
+        <div className="mt-10 flex min-h-[24rem] flex-1">
+          <PromptComposer
+            className="flex min-h-0 max-w-none flex-1 flex-col overflow-y-auto"
+            textareaClassName="min-h-[18rem] flex-1"
+            placeholder="Describe the enterprise wrapper your organization can approve..."
+            submitLabel="Wrap for enterprise"
+          />
+        </div>
       </div>
     </section>
   );

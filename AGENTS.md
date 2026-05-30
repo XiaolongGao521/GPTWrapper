@@ -185,6 +185,11 @@ src/
 
 Do not add new page templates unless the current templates cannot express the content cleanly.
 
+## Enterprise Page
+
+- `/enterprise` intentionally uses an oversized, viewport-filling prompt composer that starts below the hero headline and occupies nearly the full remaining first-screen width and height.
+- Keep this oversized composer scoped to the Enterprise page unless the user explicitly asks to resize the shared prompt surface across the site.
+
 ## Homepage Layout
 
 The homepage should follow this Bolt-inspired structure:
