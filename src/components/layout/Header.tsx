@@ -128,6 +128,15 @@ export function Header() {
                   </SheetDescription>
                   <Brand />
                 </SheetHeader>
+                <div className="mt-6 flex items-center gap-2">
+                  <ThemeToggle className="size-10" />
+                  <Button asChild variant="outline" className="flex-1 border-border bg-transparent text-foreground hover:bg-secondary">
+                    <Link href="/#start">Sign in</Link>
+                  </Button>
+                  <Button asChild className="flex-1 bolt-blue-button">
+                    <Link href="/#start">Get started</Link>
+                  </Button>
+                </div>
                 <nav className="mt-8 flex flex-col gap-8">
                   <div className="grid gap-1">
                     {primaryNav.map((item) => (
@@ -179,15 +188,6 @@ export function Header() {
                         </Link>
                       ))}
                     </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <ThemeToggle className="size-10" />
-                    <Button asChild variant="outline" className="flex-1 border-border bg-transparent text-foreground hover:bg-secondary">
-                      <Link href="/#start">Sign in</Link>
-                    </Button>
-                    <Button asChild className="flex-1 bolt-blue-button">
-                      <Link href="/#start">Get started</Link>
-                    </Button>
                   </div>
                 </nav>
               </SheetContent>

@@ -307,6 +307,18 @@ Future behavior, if requested:
 - Add actual complexity only when the product concept or user request requires it.
 - When updating the existing codebase, reduce the route surface first, then restyle toward the dark Bolt-inspired system.
 
+## Documentation Discipline
+
+- Any code change that adds, removes, or changes product behavior, routes, visual systems, storage keys, architecture, commands, or process must update the relevant `AGENTS.md` file or feature documentation in the same change.
+- Prefer subtree `AGENTS.md` files for feature-specific invariants that future agents must preserve.
+- If a code change has no documentation impact, say that explicitly in the final response.
+
+## Celestial Theme System
+
+- The site has a persistent global theme cycle documented in `src/components/theme/AGENTS.md`.
+- Do not remove, bypass, or replace the celestial theme provider, toggle, storage key, or cycle logic without updating that feature document and the affected code together.
+- Theme-aware shared layout and marketing surfaces should use semantic tokens (`bg-background`, `bg-card`, `text-foreground`, `text-muted-foreground`, `border-border`) instead of hard-coded dark-only Tailwind colors.
+
 ## Work History
 
 - After finishing a request that changes files, review the diff, stage only the files changed for that request, and create a concise git commit so the work history is saved.
