@@ -52,6 +52,14 @@ Use this stack unless there is a strong reason to change it:
 
 Do not use Material UI, Bootstrap, Chakra, or Mantine for the main UI. They will push the site toward a generic app-shell look instead of a custom Bolt-inspired builder site.
 
+## Deployment
+
+- Vercel is the default deployment target.
+- Keep `vercel.json` in the repository root with `framework: "nextjs"` so import and deploy tooling can detect the project as Next.js.
+- Use `npm run deploy` or `npm run deploy:production` for production deployments, and `npm run deploy:preview` for preview deployments.
+- Use `npm run vercel:pull` before `npm run vercel:build` when local Vercel project settings have not been linked yet.
+- Keep `.vercel/` ignored; local Vercel project links and deployment state should not be committed.
+
 ## Route Architecture
 
 Build a small marketing experience, not a large directory of pages.
