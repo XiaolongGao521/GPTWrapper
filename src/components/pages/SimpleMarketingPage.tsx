@@ -1,0 +1,299 @@
+import { ArrowRight, Play, Search } from "lucide-react";
+import Link from "next/link";
+
+import { BottomPromptCTA } from "@/components/layout/BottomPromptCTA";
+import { CardGrid } from "@/components/marketing/CardGrid";
+import { Faq } from "@/components/marketing/Faq";
+import { Hero } from "@/components/marketing/Hero";
+import { SectionHeading } from "@/components/marketing/SectionHeading";
+import { Button } from "@/components/ui/button";
+import type { MarketingPage } from "@/content/types";
+
+type SimpleMarketingPageProps = {
+  page: MarketingPage;
+};
+
+function EnterprisePage({ page }: SimpleMarketingPageProps) {
+  return (
+    <>
+      <section className="relative min-h-screen overflow-hidden bg-background pb-16 pt-24">
+        <div className="blue-orbit" aria-hidden="true" />
+        <div className="container relative">
+          <div className="mx-auto max-w-5xl text-center">
+            <h1 className="text-5xl font-medium leading-tight text-foreground md:text-7xl">
+              {page.title}
+            </h1>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-muted-foreground">{page.subtitle}</p>
+            <div className="mx-auto mt-10 max-w-3xl rounded-lg border border-border bg-card p-3 shadow-[0_26px_90px_rgb(0_0_0_/_0.18)]">
+              <div className="relative overflow-hidden rounded-md bg-secondary">
+                <div className="bolt-horizon !top-[13rem]" aria-hidden="true" />
+                <div className="relative grid min-h-[260px] place-items-center p-6">
+                  <div className="w-full max-w-md rounded-xl border border-border bg-card p-4">
+                    <p className="text-left text-sm text-muted-foreground">What will you wrap today?</p>
+                    <div className="mt-8 flex items-center justify-between">
+                      <span className="text-xs text-muted-foreground">Plan</span>
+                      <span className="rounded-full bg-[#158cff] px-4 py-2 text-xs font-medium text-white">Build now</span>
+                    </div>
+                  </div>
+                  <button className="absolute left-1/2 top-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-border bg-background/30 text-foreground backdrop-blur">
+                    <Play className="size-6 fill-current" />
+                  </button>
+                </div>
+              </div>
+              <div className="mt-3 flex flex-col gap-3 border-t border-border pt-3 sm:flex-row sm:items-center">
+                <span className="text-xs text-muted-foreground">Schedule a wrapper review</span>
+                <input className="h-9 flex-1 rounded-md border border-border bg-background px-3 text-sm text-foreground outline-none placeholder:text-muted-foreground" placeholder="Your work email" />
+                <Button className="h-9 rounded-md bolt-blue-button px-5">Submit</Button>
+              </div>
+            </div>
+          </div>
+          <div className="mt-14 grid grid-cols-2 gap-6 text-center text-sm font-semibold text-muted-foreground md:grid-cols-6">
+            {["Acme", "Hubsync", "Metaform", "Move.ai", "Inteleaf", "Salesforth"].map((logo) => (
+              <span key={logo}>{logo}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="page-band py-24">
+        <div className="container grid gap-8 lg:grid-cols-3">
+          {page.sections[0]?.items?.map((item) => (
+            <article key={item.title} className="bolt-card p-6">
+              <h2 className="text-xl font-semibold text-foreground">{item.title}</h2>
+              <p className="mt-4 text-sm leading-7 text-muted-foreground">{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      {page.faqs ? <Faq faqs={page.faqs} /> : null}
+    </>
+  );
+}
+
+function CareersPage({ page }: SimpleMarketingPageProps) {
+  const roles = page.sections[0]?.items ?? [];
+
+  return (
+    <>
+      <section className="relative min-h-[720px] overflow-hidden bg-background pb-16 pt-24">
+        <div className="blue-orbit !top-24" aria-hidden="true" />
+        <div className="container relative flex min-h-[600px] items-center justify-center">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="text-balance text-5xl font-semibold leading-[1.12] text-foreground md:text-6xl">
+              {page.title}
+            </h1>
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-muted-foreground">{page.subtitle}</p>
+            <div className="mx-auto mt-8 h-0.5 w-28 bg-[#158cff]" />
+          </div>
+        </div>
+      </section>
+      <section className="page-band py-24">
+        <div className="container">
+          <h2 className="text-center text-4xl font-semibold text-foreground">Open roles</h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {roles.map((role) => (
+              <article key={role.title} className="bolt-card p-6">
+                <h3 className="text-xl font-semibold text-foreground">{role.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">{role.description}</p>
+                <Link href="#start" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-foreground">
+                  View role <ArrowRight className="size-4" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <BottomPromptCTA ctaLabel={page.ctaLabel ?? "Wrap your role"} />
+    </>
+  );
+}
+
+function CommunityPage({ page }: SimpleMarketingPageProps) {
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-[#0a1018]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_82%,rgba(21,140,255,.55),transparent_22rem),radial-gradient(circle_at_72%_46%,rgba(21,140,255,.22),transparent_36rem)]" />
+      <div className="container relative grid min-h-screen items-center py-20 lg:grid-cols-[1fr_420px]">
+        <div>
+          <div className="h-64 w-64 rounded-full border border-[#158cff]/30 bg-[radial-gradient(circle,rgba(255,255,255,.4)_1px,transparent_1px)] bg-[length:14px_14px] shadow-[0_0_80px_rgb(21_140_255_/_0.22)]" />
+        </div>
+        <div className="rounded-md bg-[#34343c] p-6 shadow-[0_26px_90px_rgb(0_0_0_/_0.5)]">
+          <div className="mx-auto grid size-12 place-items-center rounded-lg bg-black text-xl font-black italic text-white">gw</div>
+          <h1 className="mt-5 text-center text-xl font-semibold text-white">You&apos;ve been invited to join GPTWrapper</h1>
+          <p className="mt-2 text-center text-sm text-zinc-300">{page.subtitle}</p>
+          <div className="mt-5 flex items-center justify-center gap-2 text-xs text-zinc-300">
+            <span className="size-2 rounded-full bg-emerald-400" />
+            <span>42,000 online</span>
+            <span>915,328 wrappers</span>
+          </div>
+          <label className="mt-6 block text-xs font-medium text-zinc-300">Display Name</label>
+          <input className="mt-2 h-10 w-full rounded border border-[#6572ff] bg-[#26262d] px-3 text-sm text-white outline-none" placeholder="What should everyone call you?" />
+          <label className="mt-4 block text-xs font-medium text-zinc-300">Date of Birth</label>
+          <div className="mt-2 grid grid-cols-3 gap-2">
+            {["Month", "Day", "Year"].map((label) => (
+              <button key={label} className="h-10 rounded bg-[#26262d] text-sm text-zinc-300">{label}</button>
+            ))}
+          </div>
+          <Button className="mt-5 h-10 w-full rounded bg-[#5865f2] text-sm text-white hover:bg-[#6976ff]">
+            Create Account
+          </Button>
+          <p className="mt-4 text-center text-xs text-zinc-400">Already have an account? Log in</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SupportPage({ page }: SimpleMarketingPageProps) {
+  const nav = [
+    "Get started with GPTWrapper",
+    "Introduction to wrapping",
+    "Quickstart guide",
+    "Learn first and reduce overthinking",
+    "Working in a box",
+    "Choose a wrapper",
+    "Use context",
+    "Collaborate with others",
+    "Share your project",
+    "Supported technologies",
+  ];
+
+  return (
+    <section className="min-h-screen bg-[#080b0f] text-white">
+      <div className="grid lg:grid-cols-[260px_1fr_220px]">
+        <aside className="hidden border-r border-white/10 px-5 py-6 lg:block">
+          <p className="text-sm font-semibold">GPTWrapper Help Center</p>
+          <nav className="mt-6 grid gap-2">
+            {nav.map((item) => (
+              <a key={item} href="#docs" className="text-sm text-zinc-500 hover:text-white">{item}</a>
+            ))}
+          </nav>
+        </aside>
+        <main id="docs" className="px-6 py-10 lg:px-12">
+          <div className="flex max-w-3xl items-center gap-2 rounded-md border border-white/10 bg-[#10141a] px-3 py-2 text-sm text-zinc-500">
+            <Search className="size-4" />
+            Search documentation
+          </div>
+          <h1 className="mt-10 text-3xl font-medium text-zinc-100">{page.title}</h1>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-400">{page.subtitle}</p>
+          <h2 className="mt-10 text-2xl font-medium text-zinc-100">Get started with GPTWrapper</h2>
+          <div className="mt-5 max-w-2xl overflow-hidden rounded-md border border-white/10 bg-[#101014]">
+            <div className="relative grid h-72 place-items-center overflow-hidden bg-[#080b0f]">
+              <div className="bolt-horizon !top-[12rem]" aria-hidden="true" />
+              <div className="relative w-[74%] rounded-xl border border-white/10 bg-[#2d2d31] p-4">
+                <p className="text-sm text-zinc-400">What will you wrap today?</p>
+                <div className="mt-10 flex justify-between text-xs text-zinc-500">
+                  <span>Plan</span>
+                  <span className="rounded-full bg-[#158cff] px-3 py-1 text-white">Build now</span>
+                </div>
+              </div>
+              <button className="absolute grid size-14 place-items-center rounded-full bg-white/15 backdrop-blur">
+                <Play className="size-6 fill-white" />
+              </button>
+            </div>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {page.sections[0]?.items?.map((item) => (
+              <article key={item.title} className="rounded-md border border-white/10 bg-[#10141a] p-4">
+                <h3 className="font-medium text-white">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-zinc-400">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </main>
+        <aside className="hidden border-l border-white/10 px-5 py-6 text-sm text-zinc-500 lg:block">
+          <p className="font-medium text-zinc-300">On this page</p>
+          <div className="mt-5 grid gap-3">
+            <a href="#docs">Get started</a>
+            <a href="#docs">What&apos;s new</a>
+            <a href="#docs">Release notes</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  );
+}
+
+function StatusPage({ page }: SimpleMarketingPageProps) {
+  return (
+    <section className="min-h-screen bg-[#161618] px-4 pb-20 pt-10">
+      <div className="mx-auto max-w-[600px]">
+        <div className="flex items-center justify-between">
+          <div className="text-xl font-black italic text-white">gpt.wrapper</div>
+          <div className="flex gap-2">
+            <Button variant="outline" className="h-8 border-white/10 bg-white/5 text-xs text-white hover:bg-white/10">Help Center</Button>
+            <Button className="h-8 rounded bg-white px-3 text-xs text-black hover:bg-zinc-200">Subscribe to updates</Button>
+          </div>
+        </div>
+        <div className="mt-6 rounded-md border border-amber-500/55 bg-amber-950/40 p-4">
+          <p className="text-sm font-medium text-amber-200">We are currently experiencing issues</p>
+          <div className="mt-4 rounded bg-[#1d1d21] p-3 text-sm text-zinc-300">
+            Increased response posture from the wrapper surface.
+          </div>
+          <p className="mt-3 text-xs leading-5 text-amber-100/70">
+            We are aware of an issue causing some wrappers to resolve with more
+            confidence than requested. Affected services are being reviewed.
+          </p>
+        </div>
+        <div className="mt-6 rounded-md border border-white/10 bg-[#1b1b1f] p-4">
+          <h1 className="text-2xl font-medium text-zinc-100">{page.title}</h1>
+          <p className="mt-2 text-sm text-zinc-400">{page.subtitle}</p>
+          <div className="mt-6 grid gap-3">
+            {page.sections[0]?.items?.map((item) => (
+              <div key={item.title} className="flex items-center justify-between rounded border border-white/10 bg-[#111114] px-4 py-3">
+                <span className="text-sm text-zinc-200">{item.title}</span>
+                <span className="inline-flex items-center gap-2 text-xs text-emerald-400">
+                  <span className="size-2 rounded-full bg-emerald-400" /> Operational
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DefaultSimplePage({ page }: SimpleMarketingPageProps) {
+  return (
+    <>
+      <Hero
+        title={page.title}
+        subtitle={page.subtitle}
+        ctaLabel={page.ctaLabel ?? "Let's wrap"}
+      />
+      {page.sections.map((section) => (
+        <section key={section.title} className="page-band py-20 md:py-28">
+          <div className="container">
+            <SectionHeading title={section.title} description={section.description} />
+            <CardGrid items={section.items ?? []} className="mt-10" />
+          </div>
+        </section>
+      ))}
+      {page.faqs ? <Faq faqs={page.faqs} /> : null}
+      <BottomPromptCTA ctaLabel={page.ctaLabel ?? "Let's wrap"} />
+    </>
+  );
+}
+
+export function SimpleMarketingPage({ page }: SimpleMarketingPageProps) {
+  if (page.slug === "enterprise") {
+    return <EnterprisePage page={page} />;
+  }
+
+  if (page.slug === "careers") {
+    return <CareersPage page={page} />;
+  }
+
+  if (page.slug === "community") {
+    return <CommunityPage page={page} />;
+  }
+
+  if (page.slug === "support") {
+    return <SupportPage page={page} />;
+  }
+
+  if (page.slug === "status") {
+    return <StatusPage page={page} />;
+  }
+
+  return <DefaultSimplePage page={page} />;
+}
