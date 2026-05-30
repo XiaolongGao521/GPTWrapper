@@ -10,7 +10,8 @@ import { cn } from "@/lib/utils";
 
 const tiers = [
   {
-    name: "Free",
+    id: "curious",
+    name: "Curious",
     price: "$0",
     period: "",
     description: "For proving the wrapper can carry the meeting.",
@@ -26,7 +27,8 @@ const tiers = [
     ],
   },
   {
-    name: "Pro",
+    id: "serious",
+    name: "Serious",
     price: "$12",
     period: "per month",
     description: "For builders who want the same box to sound funded.",
@@ -42,7 +44,8 @@ const tiers = [
     ],
   },
   {
-    name: "Teams",
+    id: "quit-your-day-job",
+    name: "Quit Your Day Job",
     price: "$28",
     period: "per seat",
     description: "For departments standardizing the obvious.",
@@ -58,7 +61,8 @@ const tiers = [
     ],
   },
   {
-    name: "Enterprise",
+    id: "enterprise",
+    name: "This if For My Day Job (Enterprise)",
     price: "Custom",
     period: "",
     description: "For organizations that need confidence before surface area.",
@@ -97,7 +101,7 @@ export function PricingPage({ page }: PricingPageProps) {
           <div className="mt-12 grid gap-4 lg:grid-cols-4">
             {tiers.map((tier) => (
               <article
-                key={tier.name}
+                key={tier.id}
                 className={cn(
                   "flex min-h-[420px] flex-col rounded-lg border border-border bg-card p-5 text-card-foreground",
                   tier.featured && "border-primary/60 shadow-[0_0_42px_rgb(21_140_255_/_0.16)]",
@@ -122,7 +126,7 @@ export function PricingPage({ page }: PricingPageProps) {
                 </div>
                 {tier.waitlist ? (
                   <JoinWaitlistButton
-                    data-testid={`pricing-${tier.name.toLowerCase()}-join-waitlist`}
+                    data-testid={`pricing-${tier.id}-join-waitlist`}
                     className={cn(
                       "mt-6 h-9 w-full rounded-md text-sm font-medium",
                       tier.featured
