@@ -177,9 +177,9 @@ const simplePages: MarketingPage[] = [
     slug: "status",
     template: "simple",
     navGroup: "resources",
-    title: "All wrapper systems are maintaining posture",
+    title: "All wrapper systems are green",
     subtitle:
-      "The prompt surface is available, the button remains confident, and the result panel is prepared to appear.",
+      "The prompt surface is available, the button remains confident, and the platform is running on pure vibes bro.",
     ctaLabel: "Check the surface",
     sections: [
       {

@@ -184,14 +184,14 @@ function StatusPage({ page }: SimpleMarketingPageProps) {
             <Button className="h-8 rounded bg-white px-3 text-xs text-black hover:bg-zinc-200">Subscribe to updates</Button>
           </div>
         </div>
-        <div className="mt-6 rounded-md border border-amber-500/55 bg-amber-950/40 p-4">
-          <p className="text-sm font-medium text-amber-200">We are currently experiencing issues</p>
-          <div className="mt-4 rounded bg-[#1d1d21] p-3 text-sm text-zinc-300">
-            Increased response posture from the wrapper surface.
+        <div className="mt-6 rounded-md border border-emerald-500/55 bg-emerald-950/35 p-4">
+          <p className="text-sm font-medium text-emerald-200">All systems are green</p>
+          <div className="mt-4 rounded bg-[#132018] p-3 text-sm text-emerald-100">
+            running on pure vibes bro
           </div>
-          <p className="mt-3 text-xs leading-5 text-amber-100/70">
-            We are aware of an issue causing some wrappers to resolve with more
-            confidence than requested. Affected services are being reviewed.
+          <p className="mt-3 text-xs leading-5 text-emerald-100/70">
+            The prompt surface, response posture, and visible confidence layer
+            are operating within vibe-forward expectations.
           </p>
         </div>
         <div className="mt-6 rounded-md border border-white/10 bg-[#1b1b1f] p-4">
