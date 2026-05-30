@@ -186,7 +186,7 @@ The homepage should follow this Bolt-inspired structure:
 Header
   Logo
   Navigation: Community, Enterprise, Resources, Careers, Pricing
-  Actions: Sign in, Get started
+  Actions: Get started
 
 Hero
   Large centered headline

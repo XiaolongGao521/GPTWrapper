@@ -97,13 +97,6 @@ export function Header() {
               </Link>
             ))}
           </div>
-          <Button
-            asChild
-            variant="outline"
-            className="hidden h-8 rounded-md border-border bg-transparent px-3 text-[13px] font-medium text-foreground hover:bg-secondary md:inline-flex"
-          >
-            <Link href="/#start">Sign in</Link>
-          </Button>
           <Button asChild className="hidden h-8 rounded-md bolt-blue-button px-3 text-[13px] font-medium md:inline-flex">
             <Link href="/#start">Get started</Link>
           </Button>
@@ -130,9 +123,6 @@ export function Header() {
                 </SheetHeader>
                 <div className="mt-6 flex items-center gap-2">
                   <ThemeToggle className="size-10" />
-                  <Button asChild variant="outline" className="flex-1 border-border bg-transparent text-foreground hover:bg-secondary">
-                    <Link href="/#start">Sign in</Link>
-                  </Button>
                   <Button asChild className="flex-1 bolt-blue-button">
                     <Link href="/#start">Get started</Link>
                   </Button>
