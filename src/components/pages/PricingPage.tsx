@@ -62,7 +62,7 @@ const tiers = [
   },
   {
     id: "enterprise",
-    name: "This if For My Day Job (Enterprise)",
+    name: "This is For My Day Job (Enterprise)",
     price: "Custom",
     period: "",
     description: "For organizations that need confidence before surface area.",
