@@ -74,7 +74,7 @@ export function PromptComposer({
     <form
       onSubmit={handleSubmit}
       className={cn(
-        "mx-auto w-full max-w-[628px] overflow-hidden rounded-[1.05rem] border border-border bg-card text-left text-card-foreground shadow-prompt ring-[7px] ring-foreground/5",
+        "prompt-composer mx-auto w-full max-w-[628px] overflow-hidden rounded-[1.05rem] border border-border bg-card text-left text-card-foreground shadow-prompt ring-[7px] ring-foreground/5",
         compact && "max-w-[520px] rounded-xl ring-[5px]",
         className,
       )}

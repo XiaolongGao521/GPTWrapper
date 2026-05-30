@@ -25,9 +25,11 @@ This subtree owns the site-wide theme cycle. Future changes to theme behavior, v
 - `dark` is the standard dark GPTWrapper SaaS palette.
 - `sunrise` shows light creeping in from the left/east side of the screen.
 - `sunset` shows light exiting on the right/west side of the screen.
-- `solar-eclipse` uses a dark palette with a centered eclipse disk, corona, and white beam effects.
-- `lunar-eclipse` uses a dark red-tinted palette with a centered red moon and dim crimson overlay.
+- `solar-eclipse` uses a dark palette with one section-integrated eclipse disk, corona, and white beam effects.
+- `lunar-eclipse` uses a dark red-tinted palette with one section-integrated red moon and dim crimson overlay.
 - The atmosphere is CSS-driven. Do not replace it with images or canvas unless the product requirements change and this document is updated.
+- Fixed atmosphere layers are ambient only. They must stay behind readable content and must not render eclipse or moon disks that can cover text while scrolling.
+- Theme-aware shared surfaces should participate through internal CSS variables for shell backgrounds, section backgrounds, panels, prompt surfaces, horizon accents, and primary action colors.
 - Shared shell and marketing surfaces must use semantic theme tokens so light modes remain readable.
 
 ## UI Placement

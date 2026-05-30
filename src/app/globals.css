@@ -31,6 +31,23 @@
     --grid-line: hsl(0 0% 100% / 0.035);
     --shell-background: linear-gradient(180deg, #101014 0%, #09090b 42rem, #0b0b0d 100%);
     --hero-glow: radial-gradient(circle at 50% 6rem, hsl(210 72% 17% / 0.52), transparent 30rem);
+    --section-background: hsl(var(--background));
+    --panel-background: linear-gradient(180deg, hsl(var(--card) / 0.94), hsl(var(--card) / 0.88));
+    --panel-border: hsl(var(--border));
+    --panel-shadow: 0 18px 60px hsl(0 0% 0% / 0.16);
+    --prompt-background: hsl(var(--card));
+    --prompt-border: hsl(var(--border));
+    --prompt-ring: hsl(0 0% 100% / 0.035);
+    --horizon-border: hsl(0 0% 100% / 0.96);
+    --horizon-accent: hsl(207 100% 50% / 0.9);
+    --horizon-glow: hsl(207 100% 55% / 0.62);
+    --horizon-inner: hsl(207 100% 70% / 0.6);
+    --horizon-wash: radial-gradient(ellipse at 50% 0%, hsl(207 100% 55% / 0.18), transparent 1.5rem);
+    --horizon-before: radial-gradient(ellipse at 50% 100%, hsl(207 100% 50% / 0.25), transparent 62%);
+    --action-background: hsl(207 100% 54%);
+    --action-background-hover: hsl(207 100% 59%);
+    --action-foreground: hsl(0 0% 100%);
+    --action-glow: hsl(207 100% 50% / 0.25);
     --atmosphere-opacity: 0;
     --radius: 0.5rem;
   }
@@ -61,6 +78,13 @@
     --grid-line: hsl(240 8% 8% / 0.055);
     --shell-background: linear-gradient(180deg, hsl(210 32% 99%) 0%, hsl(215 34% 96%) 44rem, hsl(218 28% 94%) 100%);
     --hero-glow: radial-gradient(circle at 50% 8rem, hsl(207 100% 72% / 0.25), transparent 31rem);
+    --section-background: linear-gradient(180deg, hsl(210 32% 98%) 0%, hsl(215 34% 96%) 100%);
+    --panel-background: linear-gradient(180deg, hsl(0 0% 100% / 0.96), hsl(213 42% 98% / 0.9));
+    --panel-border: hsl(220 18% 84%);
+    --panel-shadow: 0 18px 60px hsl(226 28% 20% / 0.12);
+    --prompt-background: hsl(0 0% 100% / 0.96);
+    --prompt-border: hsl(211 74% 78% / 0.7);
+    --prompt-ring: hsl(207 100% 50% / 0.08);
   }
 
   [data-theme-mode="sunrise"] {
@@ -89,6 +113,23 @@
     --hero-glow:
       radial-gradient(circle at 18% 9rem, hsl(0 0% 100% / 0.85), transparent 16rem),
       linear-gradient(90deg, hsl(42 100% 97% / 0.94) 0%, hsl(39 100% 82% / 0.42) 32%, transparent 70%);
+    --section-background: linear-gradient(115deg, hsl(43 100% 98%) 0%, hsl(39 82% 96%) 48%, hsl(213 34% 94%) 100%);
+    --panel-background: linear-gradient(145deg, hsl(0 0% 100% / 0.96), hsl(42 100% 97% / 0.9));
+    --panel-border: hsl(34 48% 76% / 0.86);
+    --panel-shadow: 0 18px 60px hsl(32 60% 34% / 0.14);
+    --prompt-background: linear-gradient(160deg, hsl(0 0% 100% / 0.98), hsl(42 100% 96% / 0.92));
+    --prompt-border: hsl(35 72% 72% / 0.85);
+    --prompt-ring: hsl(39 100% 70% / 0.18);
+    --horizon-border: hsl(0 0% 100% / 0.94);
+    --horizon-accent: hsl(38 100% 64% / 0.86);
+    --horizon-glow: hsl(37 100% 62% / 0.42);
+    --horizon-inner: hsl(43 100% 82% / 0.72);
+    --horizon-wash: radial-gradient(ellipse at 12% 0%, hsl(42 100% 82% / 0.36), transparent 1.8rem);
+    --horizon-before: radial-gradient(ellipse at 18% 100%, hsl(39 100% 64% / 0.26), transparent 64%);
+    --action-background: linear-gradient(135deg, hsl(207 100% 49%), hsl(35 100% 57%));
+    --action-background-hover: linear-gradient(135deg, hsl(207 100% 54%), hsl(32 100% 62%));
+    --action-foreground: hsl(0 0% 100%);
+    --action-glow: hsl(35 100% 57% / 0.22);
     --atmosphere-opacity: 1;
   }
 
@@ -100,6 +141,10 @@
     --card-foreground: 36 48% 96%;
     --popover: 240 6% 12%;
     --popover-foreground: 36 48% 96%;
+    --primary: 31 100% 62%;
+    --primary-foreground: 240 7% 6%;
+    --accent: 31 100% 58%;
+    --accent-foreground: 240 7% 6%;
     --secondary: 240 5% 16%;
     --secondary-foreground: 36 48% 92%;
     --muted: 240 5% 16%;
@@ -114,6 +159,23 @@
     --hero-glow:
       radial-gradient(circle at 84% 9rem, hsl(44 100% 86% / 0.66), transparent 18rem),
       linear-gradient(90deg, transparent 0%, hsl(31 100% 58% / 0.18) 58%, hsl(40 100% 88% / 0.42) 100%);
+    --section-background: linear-gradient(115deg, hsl(240 7% 6%) 0%, hsl(240 7% 7%) 58%, hsl(28 48% 15%) 100%);
+    --panel-background: linear-gradient(150deg, hsl(240 6% 12% / 0.95), hsl(29 42% 13% / 0.78));
+    --panel-border: hsl(35 40% 28% / 0.9);
+    --panel-shadow: 0 18px 60px hsl(0 0% 0% / 0.42);
+    --prompt-background: linear-gradient(160deg, hsl(240 6% 12% / 0.96), hsl(29 48% 13% / 0.86));
+    --prompt-border: hsl(35 48% 32% / 0.9);
+    --prompt-ring: hsl(32 100% 62% / 0.09);
+    --horizon-border: hsl(38 100% 84% / 0.78);
+    --horizon-accent: hsl(30 100% 56% / 0.78);
+    --horizon-glow: hsl(30 100% 58% / 0.46);
+    --horizon-inner: hsl(42 100% 80% / 0.52);
+    --horizon-wash: radial-gradient(ellipse at 88% 0%, hsl(39 100% 72% / 0.28), transparent 1.8rem);
+    --horizon-before: radial-gradient(ellipse at 84% 100%, hsl(31 100% 58% / 0.22), transparent 64%);
+    --action-background: linear-gradient(135deg, hsl(32 100% 55%), hsl(12 84% 52%));
+    --action-background-hover: linear-gradient(135deg, hsl(35 100% 61%), hsl(13 89% 58%));
+    --action-foreground: hsl(240 7% 6%);
+    --action-glow: hsl(25 100% 55% / 0.24);
     --atmosphere-opacity: 1;
   }
 
@@ -137,10 +199,27 @@
     --grid-line: hsl(0 0% 100% / 0.035);
     --shell-background: linear-gradient(180deg, hsl(240 9% 4%) 0%, hsl(240 8% 5%) 48rem, hsl(240 9% 3%) 100%);
     --hero-glow:
-      radial-gradient(circle at 50% 10.5rem, hsl(240 9% 3%) 0 2.75rem, hsl(0 0% 100% / 0.95) 2.8rem 3.02rem, hsl(48 100% 84% / 0.45) 3.08rem 5.5rem, transparent 14rem),
-      linear-gradient(98deg, transparent 0 42%, hsl(0 0% 100% / 0.2) 48%, transparent 58% 100%),
-      radial-gradient(circle at 50% 10.5rem, hsl(0 0% 100% / 0.14), transparent 26rem);
-    --atmosphere-opacity: 1;
+      radial-gradient(circle at 50% 9.2rem, hsl(240 10% 3%) 0 2.9rem, hsl(0 0% 100% / 0.92) 2.94rem 3.12rem, hsl(47 100% 84% / 0.4) 3.18rem 5.8rem, transparent 14rem),
+      linear-gradient(98deg, transparent 0 43%, hsl(0 0% 100% / 0.16) 49%, transparent 57% 100%),
+      radial-gradient(circle at 50% 9.2rem, hsl(0 0% 100% / 0.12), transparent 26rem);
+    --section-background: linear-gradient(180deg, hsl(240 9% 4%) 0%, hsl(235 10% 5%) 58%, hsl(240 10% 3%) 100%);
+    --panel-background: linear-gradient(160deg, hsl(240 7% 9% / 0.96), hsl(220 18% 8% / 0.88));
+    --panel-border: hsl(0 0% 100% / 0.13);
+    --panel-shadow: 0 18px 66px hsl(0 0% 0% / 0.5), 0 0 24px hsl(0 0% 100% / 0.035);
+    --prompt-background: linear-gradient(160deg, hsl(240 8% 8% / 0.98), hsl(220 18% 7% / 0.92));
+    --prompt-border: hsl(0 0% 100% / 0.18);
+    --prompt-ring: hsl(0 0% 100% / 0.07);
+    --horizon-border: hsl(0 0% 100% / 0.84);
+    --horizon-accent: hsl(0 0% 100% / 0.56);
+    --horizon-glow: hsl(47 100% 84% / 0.3);
+    --horizon-inner: hsl(207 100% 86% / 0.38);
+    --horizon-wash: radial-gradient(ellipse at 50% 0%, hsl(0 0% 100% / 0.12), transparent 1.6rem);
+    --horizon-before: radial-gradient(ellipse at 50% 100%, hsl(0 0% 100% / 0.14), transparent 62%);
+    --action-background: linear-gradient(135deg, hsl(0 0% 96%), hsl(207 100% 78%));
+    --action-background-hover: linear-gradient(135deg, hsl(0 0% 100%), hsl(207 100% 84%));
+    --action-foreground: hsl(240 9% 4%);
+    --action-glow: hsl(0 0% 100% / 0.18);
+    --atmosphere-opacity: 0.68;
   }
 
   [data-theme-mode="lunar-eclipse"] {
@@ -169,10 +248,27 @@
     --grid-line: hsl(4 86% 72% / 0.04);
     --shell-background: linear-gradient(180deg, hsl(355 34% 7%) 0%, hsl(352 37% 6%) 44rem, hsl(350 39% 5%) 100%);
     --hero-glow:
-      radial-gradient(circle at 50% 10.5rem, hsl(2 74% 48%) 0 3rem, hsl(355 68% 31% / 0.72) 3.05rem 4.2rem, transparent 11rem),
-      radial-gradient(circle at 50% 10.5rem, hsl(4 86% 59% / 0.25), transparent 27rem),
+      radial-gradient(circle at 50% 9.2rem, hsl(2 72% 46%) 0 2.95rem, hsl(355 66% 29% / 0.7) 3.02rem 4.15rem, transparent 11rem),
+      radial-gradient(circle at 50% 9.2rem, hsl(4 86% 59% / 0.22), transparent 27rem),
       linear-gradient(180deg, hsl(352 58% 9% / 0.35), hsl(352 58% 9% / 0.72));
-    --atmosphere-opacity: 1;
+    --section-background: linear-gradient(180deg, hsl(355 34% 7%) 0%, hsl(352 34% 7%) 58%, hsl(350 39% 5%) 100%);
+    --panel-background: linear-gradient(160deg, hsl(352 28% 11% / 0.96), hsl(350 38% 9% / 0.9));
+    --panel-border: hsl(4 56% 32% / 0.54);
+    --panel-shadow: 0 18px 66px hsl(0 0% 0% / 0.48), 0 0 26px hsl(4 86% 59% / 0.055);
+    --prompt-background: linear-gradient(160deg, hsl(352 28% 11% / 0.98), hsl(350 38% 9% / 0.92));
+    --prompt-border: hsl(4 64% 38% / 0.58);
+    --prompt-ring: hsl(4 86% 59% / 0.1);
+    --horizon-border: hsl(8 72% 76% / 0.66);
+    --horizon-accent: hsl(4 86% 59% / 0.58);
+    --horizon-glow: hsl(4 86% 59% / 0.28);
+    --horizon-inner: hsl(12 84% 72% / 0.34);
+    --horizon-wash: radial-gradient(ellipse at 50% 0%, hsl(4 86% 59% / 0.12), transparent 1.7rem);
+    --horizon-before: radial-gradient(ellipse at 50% 100%, hsl(4 86% 59% / 0.14), transparent 62%);
+    --action-background: linear-gradient(135deg, hsl(4 86% 59%), hsl(355 68% 42%));
+    --action-background-hover: linear-gradient(135deg, hsl(8 88% 64%), hsl(355 72% 48%));
+    --action-foreground: hsl(0 0% 100%);
+    --action-glow: hsl(4 86% 59% / 0.22);
+    --atmosphere-opacity: 0.64;
   }
 
   * {
@@ -199,7 +295,8 @@
 
 @layer components {
   .page-band {
-    @apply border-t border-border bg-background;
+    @apply border-t border-border;
+    background: var(--section-background);
   }
 
   .text-balance {
@@ -224,14 +321,14 @@
     height: 34rem;
     transform: translateX(-50%);
     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    border-top: 14px solid hsl(0 0% 100% / 0.96);
+    border-top: 14px solid var(--horizon-border);
     background:
-      radial-gradient(ellipse at 50% 0%, hsl(207 100% 55% / 0.18), transparent 1.5rem),
+      var(--horizon-wash),
       linear-gradient(hsl(var(--background)), hsl(var(--background)));
     box-shadow:
-      0 -0.55rem 0 hsl(207 100% 50% / 0.9),
-      0 -1.1rem 2.5rem hsl(207 100% 55% / 0.62),
-      inset 0 0.12rem 0 hsl(207 100% 70% / 0.6);
+      0 -0.55rem 0 var(--horizon-accent),
+      0 -1.1rem 2.5rem var(--horizon-glow),
+      inset 0 0.12rem 0 var(--horizon-inner);
     pointer-events: none;
   }
 
@@ -241,7 +338,7 @@
     inset: -4rem 0 auto;
     height: 17rem;
     border-radius: inherit;
-    background: radial-gradient(ellipse at 50% 100%, hsl(207 100% 50% / 0.25), transparent 62%);
+    background: var(--horizon-before);
     filter: blur(18px);
   }
 
@@ -261,15 +358,34 @@
   }
 
   .bolt-panel {
-    @apply rounded-lg border border-border bg-card/90 text-card-foreground shadow-[0_22px_80px_rgb(0_0_0_/_0.18)];
+    @apply rounded-lg border text-card-foreground;
+    background: var(--panel-background);
+    border-color: var(--panel-border);
+    box-shadow: var(--panel-shadow);
   }
 
   .bolt-card {
-    @apply rounded-lg border border-border bg-card text-card-foreground shadow-[0_18px_60px_rgb(0_0_0_/_0.16)];
+    @apply rounded-lg border text-card-foreground;
+    background: var(--panel-background);
+    border-color: var(--panel-border);
+    box-shadow: var(--panel-shadow);
   }
 
   .bolt-blue-button {
-    @apply bg-[#158cff] text-white hover:bg-[#2f9bff];
+    background: var(--action-background) !important;
+    color: var(--action-foreground) !important;
+    box-shadow: 0 0 24px var(--action-glow);
+  }
+
+  .bolt-blue-button:hover {
+    background: var(--action-background-hover) !important;
+    color: var(--action-foreground) !important;
+  }
+
+  .prompt-composer {
+    background: var(--prompt-background) !important;
+    border-color: var(--prompt-border) !important;
+    --tw-ring-color: var(--prompt-ring) !important;
   }
 
   .legal-copy h2 {
@@ -297,10 +413,10 @@
   .theme-atmosphere {
     position: fixed;
     inset: 0;
-    z-index: 2;
+    z-index: 0;
     pointer-events: none;
     overflow: hidden;
-    opacity: var(--atmosphere-opacity);
+    opacity: 0;
     transition: opacity 300ms ease;
   }
 
@@ -312,6 +428,7 @@
   }
 
   [data-theme-mode="sunrise"] .theme-atmosphere {
+    opacity: var(--atmosphere-opacity);
     background:
       radial-gradient(circle at 0% 26%, hsl(0 0% 100% / 0.42), transparent 24rem),
       linear-gradient(90deg, hsl(43 100% 95% / 0.46) 0%, hsl(42 100% 86% / 0.18) 34%, transparent 70%);
@@ -330,6 +447,7 @@
   }
 
   [data-theme-mode="sunset"] .theme-atmosphere {
+    opacity: var(--atmosphere-opacity);
     background:
       radial-gradient(circle at 100% 28%, hsl(43 100% 80% / 0.34), transparent 26rem),
       linear-gradient(90deg, transparent 0%, hsl(28 100% 56% / 0.12) 58%, hsl(42 100% 86% / 0.36) 100%);
@@ -348,25 +466,14 @@
   }
 
   [data-theme-mode="solar-eclipse"] .theme-atmosphere {
+    opacity: var(--atmosphere-opacity);
     background:
-      radial-gradient(circle at 50% 13rem, hsl(0 0% 100% / 0.16), transparent 22rem),
-      linear-gradient(104deg, transparent 0 42%, hsl(0 0% 100% / 0.18) 49%, transparent 57% 100%);
+      radial-gradient(circle at 50% 12rem, hsl(0 0% 100% / 0.08), transparent 24rem),
+      linear-gradient(104deg, transparent 0 44%, hsl(0 0% 100% / 0.1) 50%, transparent 58% 100%);
   }
 
   [data-theme-mode="solar-eclipse"] .theme-orb {
-    left: 50%;
-    top: 8rem;
-    width: 7.5rem;
-    height: 7.5rem;
-    border-radius: 9999px;
-    background:
-      radial-gradient(circle, hsl(240 9% 3%) 0 58%, transparent 59%),
-      radial-gradient(circle, hsl(0 0% 100% / 0.95) 61%, hsl(47 100% 83% / 0.55) 68%, transparent 76%);
-    box-shadow:
-      0 0 2rem hsl(0 0% 100% / 0.5),
-      0 0 7rem hsl(48 100% 82% / 0.34);
-    opacity: 1;
-    transform: translateX(-50%);
+    opacity: 0;
   }
 
   [data-theme-mode="solar-eclipse"] .theme-beam {
@@ -381,26 +488,14 @@
   }
 
   [data-theme-mode="lunar-eclipse"] .theme-atmosphere {
+    opacity: var(--atmosphere-opacity);
     background:
-      radial-gradient(circle at 50% 13rem, hsl(4 86% 59% / 0.25), transparent 20rem),
-      linear-gradient(180deg, hsl(352 58% 9% / 0.28), hsl(352 58% 9% / 0.62));
+      radial-gradient(circle at 50% 12rem, hsl(4 86% 59% / 0.12), transparent 22rem),
+      linear-gradient(180deg, hsl(352 58% 9% / 0.16), hsl(352 58% 9% / 0.34));
   }
 
   [data-theme-mode="lunar-eclipse"] .theme-orb {
-    left: 50%;
-    top: 8rem;
-    width: 7rem;
-    height: 7rem;
-    border-radius: 9999px;
-    background:
-      radial-gradient(circle at 36% 32%, hsl(12 83% 60% / 0.5), transparent 19%),
-      radial-gradient(circle at 64% 62%, hsl(350 65% 22% / 0.48), transparent 24%),
-      radial-gradient(circle, hsl(4 75% 48%) 0 62%, hsl(352 68% 31%) 76%, transparent 78%);
-    box-shadow:
-      0 0 2rem hsl(4 86% 59% / 0.28),
-      0 0 9rem hsl(4 86% 59% / 0.22);
-    opacity: 1;
-    transform: translateX(-50%);
+    opacity: 0;
   }
 
   [data-theme-mode="lunar-eclipse"] .theme-beam {
