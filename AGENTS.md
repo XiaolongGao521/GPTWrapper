@@ -72,7 +72,6 @@ Primary routes:
 
 /pricing
 /enterprise
-/community
 /careers
 
 /resources
@@ -89,7 +88,6 @@ Do not create role-specific, solution-specific, template, guide, video, review, 
 Top navigation should stay small:
 
 ```txt
-Community
 Enterprise
 Resources
 Careers
@@ -103,14 +101,6 @@ Resources
   Docs & Help Center
   Blog
   Status
-
-Community
-  Discord
-  YouTube
-  Instagram
-  LinkedIn
-  Twitter/X
-  Reddit
 ```
 
 Most pages should still be generated from content configuration, but the configuration should remain compact enough to scan in one sitting.
@@ -120,7 +110,7 @@ Most pages should still be generated from content configuration, but the configu
 Use a very small set of reusable page templates:
 
 - `HomePage`: hero prompt, proof strip, builder feature sections, examples, stats, final prompt CTA.
-- `SimpleMarketingPage`: community, enterprise, careers, support, status, and other concise pages.
+- `SimpleMarketingPage`: enterprise, careers, support, status, and other concise pages.
 - `ResourcesPage`: consolidated resources landing page with docs, blog, support, and status links.
 - `BlogPage`: optional lightweight listing if `/blog` is kept.
 - `PricingPage`: simple pricing cards with deadpan tier positioning.
@@ -195,9 +185,9 @@ Do not add new page templates unless the current templates cannot express the co
 - `/pricing` should stay focused on pricing options only. Do not append shared FAQ, generic marketing bands, prompt CTAs, or secondary page sections unless the user explicitly asks.
 - The Monthly/Annual billing selector must be interactive and visibly update the recurring plan prices.
 
-## Community Page
+## Removed Community Flow
 
-- `/community` should remain a compact invite-style social surface without an account-creation or community-joining CTA unless the user explicitly asks for one.
+- Do not add `/community`, Community navigation, social/community menu sections, social footer columns, or invite/account-creation surfaces unless the user explicitly asks to restore that flow.
 
 ## Homepage Layout
 
@@ -206,7 +196,7 @@ The homepage should follow this Bolt-inspired structure:
 ```txt
 Header
   Logo
-  Navigation: Community, Enterprise, Resources, Careers, Pricing
+  Navigation: Enterprise, Resources, Careers, Pricing
   Actions: Join Waitlist
 
 Hero
@@ -234,7 +224,6 @@ Footer
   Logo
   Resources column
   Company column
-  Social column
 ```
 
 Suggested hero copy direction:
@@ -252,7 +241,7 @@ These are examples, not required strings. Keep all copy original and avoid copyi
 - The logo should be a confident GPTWrapper wordmark, not a Bolt-style logo clone.
 - Desktop Resources menu should be a wide floating panel with a dark surface, thin border, large link rows, and lucide icons.
 - Mobile navigation should use a shadcn/Radix sheet with the same small route set.
-- Footer should be sparse and dark, with a large logo at left and three link columns: Resources, Company, Social.
+- Footer should be sparse and dark, with a large logo at left and two link columns: Resources and Company.
 - Avoid dense multi-column directories. The reduced page count is part of the product direction.
 
 ## UI Rules

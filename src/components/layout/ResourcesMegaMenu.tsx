@@ -11,7 +11,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { communityNav, resourceNav } from "@/content/nav";
+import { resourceNav } from "@/content/nav";
 import type { NavItem } from "@/content/types";
 
 function MenuLink({ item }: { item: NavItem }) {
@@ -45,23 +45,13 @@ export function ResourcesMegaMenu() {
             Resources
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <div className="grid w-[min(82vw,704px)] gap-10 bg-card p-8 md:grid-cols-[0.9fr_1.4fr]">
+            <div className="w-[min(82vw,360px)] bg-card p-6">
               <div>
                 <h2 className="text-[13px] font-bold uppercase leading-none text-muted-foreground">
                   Resources
                 </h2>
                 <div className="mt-5 grid gap-4">
                   {resourceNav.map((item) => (
-                    <MenuLink key={item.href} item={item} />
-                  ))}
-                </div>
-              </div>
-              <div>
-                <h2 className="text-[13px] font-bold uppercase leading-none text-muted-foreground">
-                  Community
-                </h2>
-                <div className="mt-5 grid gap-x-10 gap-y-4 md:grid-cols-2">
-                  {communityNav.map((item) => (
                     <MenuLink key={item.href} item={item} />
                   ))}
                 </div>

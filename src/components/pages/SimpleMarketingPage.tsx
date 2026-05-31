@@ -76,55 +76,6 @@ function CareersPage({ page }: SimpleMarketingPageProps) {
   );
 }
 
-function CommunityPage({ page }: SimpleMarketingPageProps) {
-  return (
-    <section className="relative min-h-screen overflow-hidden bg-[#0a1018]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_82%,rgba(21,140,255,.55),transparent_22rem),radial-gradient(circle_at_72%_46%,rgba(21,140,255,.22),transparent_36rem)]" />
-      <div className="container relative grid min-h-screen items-center py-20 lg:grid-cols-[1fr_420px]">
-        <div>
-          <div className="h-64 w-64 rounded-full border border-[#158cff]/30 bg-[radial-gradient(circle,rgba(255,255,255,.4)_1px,transparent_1px)] bg-[length:14px_14px] shadow-[0_0_80px_rgb(21_140_255_/_0.22)]" />
-        </div>
-        <div className="rounded-md bg-[#34343c] p-6 shadow-[0_26px_90px_rgb(0_0_0_/_0.5)]">
-          <div className="mx-auto grid size-12 place-items-center rounded-lg bg-black text-xl font-black italic text-white">
-            gw
-          </div>
-          <h1 className="mt-5 text-center text-xl font-semibold text-white">
-            You&apos;ve been invited to join GPTWrapper
-          </h1>
-          <p className="mt-2 text-center text-sm text-zinc-300">
-            {page.subtitle}
-          </p>
-          <div className="mt-5 flex items-center justify-center gap-2 text-xs text-zinc-300">
-            <span className="size-2 rounded-full bg-emerald-400" />
-            <span>42,000 online</span>
-            <span>915,328 wrappers</span>
-          </div>
-          <label className="mt-6 block text-xs font-medium text-zinc-300">
-            Display Name
-          </label>
-          <input
-            className="mt-2 h-10 w-full rounded border border-[#6572ff] bg-[#26262d] px-3 text-sm text-white outline-none"
-            placeholder="What should everyone call you?"
-          />
-          <label className="mt-4 block text-xs font-medium text-zinc-300">
-            Date of Birth
-          </label>
-          <div className="mt-2 grid grid-cols-3 gap-2">
-            {["Month", "Day", "Year"].map((label) => (
-              <button
-                key={label}
-                className="h-10 rounded bg-[#26262d] text-sm text-zinc-300"
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function SupportPage({ page }: SimpleMarketingPageProps) {
   const nav = [
     "Get started with GPTWrapper",
@@ -302,10 +253,6 @@ export function SimpleMarketingPage({ page }: SimpleMarketingPageProps) {
 
   if (page.slug === "careers") {
     return <CareersPage page={page} />;
-  }
-
-  if (page.slug === "community") {
-    return <CommunityPage page={page} />;
   }
 
   if (page.slug === "support") {

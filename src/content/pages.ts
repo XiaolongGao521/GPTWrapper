@@ -1,5 +1,5 @@
 import { sharedFaqs } from "@/content/faqs";
-import { communityNav, resourceNav } from "@/content/nav";
+import { resourceNav } from "@/content/nav";
 import type { ContentCard, MarketingPage } from "@/content/types";
 
 const resourceCards: ContentCard[] = resourceNav.map((item) => ({
@@ -35,16 +35,6 @@ const blogEntries: ContentCard[] = [
     icon: "building",
   },
 ];
-
-const socialCards: ContentCard[] = communityNav.map((item) => ({
-  title: item.title,
-  description:
-    item.title === "Discord"
-      ? "Real-time alignment for teams comparing prompt boxes."
-      : `Follow GPTWrapper on ${item.title} for wrapper-grade product posture.`,
-  href: item.href,
-  icon: item.icon,
-}));
 
 const simplePages: MarketingPage[] = [
   {
@@ -83,22 +73,6 @@ const simplePages: MarketingPage[] = [
       },
     ],
     faqs: sharedFaqs,
-  },
-  {
-    slug: "community",
-    template: "simple",
-    navGroup: "company",
-    title: "Join the wrapper conversation",
-    subtitle:
-      "Meet teams, builders, and optimistic operators creating impressive surface area from one prompt box.",
-    sections: [
-      {
-        title: "Social channels with the correct amount of certainty",
-        description:
-          "Every channel routes back to the same basic idea: context in, confident output out.",
-        items: socialCards,
-      },
-    ],
   },
   {
     slug: "careers",
