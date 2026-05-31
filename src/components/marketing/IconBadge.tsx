@@ -1,3 +1,13 @@
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import {
+  faDiscord,
+  faInstagram,
+  faLinkedin,
+  faReddit,
+  faXTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Activity,
   ArrowRight,
@@ -15,12 +25,9 @@ import {
   Globe2,
   Handshake,
   HeartHandshake,
-  Instagram,
   Layers3,
-  Linkedin,
   LockKeyhole,
   Megaphone,
-  MessageCircleMore,
   MessageSquareText,
   Newspaper,
   Play,
@@ -31,17 +38,26 @@ import {
   Settings2,
   ShieldCheck,
   Sparkles,
-  Twitter,
   UsersRound,
   WandSparkles,
-  Youtube,
   type LucideIcon,
 } from "lucide-react";
 
 import type { IconName } from "@/content/types";
 import { cn } from "@/lib/utils";
 
-const iconMap: Record<IconName, LucideIcon> = {
+type BrandIconName = "discord" | "instagram" | "linkedin" | "reddit" | "x" | "youtube";
+
+const brandIconMap: Record<BrandIconName, IconDefinition> = {
+  discord: faDiscord,
+  instagram: faInstagram,
+  linkedin: faLinkedin,
+  reddit: faReddit,
+  x: faXTwitter,
+  youtube: faYoutube,
+};
+
+const lucideIconMap: Record<Exclude<IconName, BrandIconName>, LucideIcon> = {
   activity: Activity,
   arrowRight: ArrowRight,
   badgeCheck: BadgeCheck,
@@ -59,26 +75,37 @@ const iconMap: Record<IconName, LucideIcon> = {
   handshake: Handshake,
   heart: HeartHandshake,
   layers: Layers3,
-  linkedin: Linkedin,
   lock: LockKeyhole,
   megaphone: Megaphone,
   messages: MessageSquareText,
   newspaper: Newspaper,
   play: Play,
   puzzle: Puzzle,
-  radio: Instagram,
-  reddit: MessageCircleMore,
   rocket: Rocket,
   search: Search,
   send: Send,
   settings: Settings2,
   shield: ShieldCheck,
   sparkles: Sparkles,
-  twitter: Twitter,
   users: UsersRound,
   wand: WandSparkles,
-  youtube: Youtube,
 };
+
+function isBrandIconName(icon: IconName): icon is BrandIconName {
+  return icon in brandIconMap;
+}
+
+function renderIcon(icon: IconName, iconClassName?: string) {
+  const className = cn("size-4", iconClassName);
+
+  if (isBrandIconName(icon)) {
+    return <FontAwesomeIcon icon={brandIconMap[icon]} className={className} />;
+  }
+
+  const Icon = lucideIconMap[icon];
+
+  return <Icon className={className} />;
+}
 
 type IconBadgeProps = {
   icon?: IconName;
@@ -87,8 +114,6 @@ type IconBadgeProps = {
 };
 
 export function IconBadge({ icon = "sparkles", className, iconClassName }: IconBadgeProps) {
-  const Icon = iconMap[icon];
-
   return (
     <span
       className={cn(
@@ -97,7 +122,7 @@ export function IconBadge({ icon = "sparkles", className, iconClassName }: IconB
       )}
       aria-hidden="true"
     >
-      <Icon className={cn("size-4", iconClassName)} />
+      {renderIcon(icon, iconClassName)}
     </span>
   );
 }

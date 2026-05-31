@@ -20,10 +20,12 @@ export type IconName =
   | "circle"
   | "clipboard"
   | "code"
+  | "discord"
   | "fileText"
   | "globe"
   | "handshake"
   | "heart"
+  | "instagram"
   | "layers"
   | "linkedin"
   | "lock"
@@ -32,7 +34,6 @@ export type IconName =
   | "newspaper"
   | "play"
   | "puzzle"
-  | "radio"
   | "reddit"
   | "rocket"
   | "search"
@@ -40,9 +41,9 @@ export type IconName =
   | "settings"
   | "shield"
   | "sparkles"
-  | "twitter"
   | "users"
   | "wand"
+  | "x"
   | "youtube";
 
 export type NavItem = {

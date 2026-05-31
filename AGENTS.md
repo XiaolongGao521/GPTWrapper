@@ -249,6 +249,7 @@ These are examples, not required strings. Keep all copy original and avoid copyi
 - Use shadcn/ui for buttons, cards, textarea, input, navigation menu, sheet, dialog, accordion, tabs, badge, separator, dropdown menu, and tooltip.
 - Build custom composition components for the hero, prompt composer, Resources mega menu, pricing cards, stats bands, and page sections.
 - Use lucide-react icons inside icon buttons, menu links, and compact UI controls.
+- Use Font Awesome Brands only for social brand icons; render them with inherited `currentColor` so theme-aware surfaces control the color.
 - Keep repeated cards at 8px border radius or less. The hero prompt composer and Resources mega menu may use a larger radius because they are primary surfaces.
 - Avoid cards inside cards.
 - Avoid visible text that explains UI mechanics, keyboard shortcuts, or design choices.
