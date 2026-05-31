@@ -19,7 +19,7 @@ function EnterprisePage() {
       <div className="bolt-horizon !top-[58%]" aria-hidden="true" />
       <div className="relative mx-auto flex min-h-0 w-full flex-1 flex-col text-center">
         <h1 className="mx-auto max-w-5xl text-balance text-4xl font-medium leading-tight text-foreground sm:text-5xl md:text-7xl">
-          We Made The Box Bigger for Big Companies
+          We Made The Box Bigger for The Big Enterprise
         </h1>
         <div className="mt-10 flex min-h-[24rem] flex-1">
           <PromptComposer
@@ -46,19 +46,27 @@ function CareersPage({ page }: SimpleMarketingPageProps) {
             <h1 className="text-balance text-5xl font-semibold leading-[1.12] text-foreground md:text-6xl">
               {page.title}
             </h1>
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-muted-foreground">{page.subtitle}</p>
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-muted-foreground">
+              {page.subtitle}
+            </p>
             <div className="mx-auto mt-8 h-0.5 w-28 bg-[#158cff]" />
           </div>
         </div>
       </section>
       <section className="page-band py-24">
         <div className="container">
-          <h2 className="text-center text-4xl font-semibold text-foreground">Open roles</h2>
+          <h2 className="text-center text-4xl font-semibold text-foreground">
+            Open roles
+          </h2>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {roles.map((role) => (
               <article key={role.title} className="bolt-card p-6">
-                <h3 className="text-xl font-semibold text-foreground">{role.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-muted-foreground">{role.description}</p>
+                <h3 className="text-xl font-semibold text-foreground">
+                  {role.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                  {role.description}
+                </p>
               </article>
             ))}
           </div>
@@ -77,26 +85,40 @@ function CommunityPage({ page }: SimpleMarketingPageProps) {
           <div className="h-64 w-64 rounded-full border border-[#158cff]/30 bg-[radial-gradient(circle,rgba(255,255,255,.4)_1px,transparent_1px)] bg-[length:14px_14px] shadow-[0_0_80px_rgb(21_140_255_/_0.22)]" />
         </div>
         <div className="rounded-md bg-[#34343c] p-6 shadow-[0_26px_90px_rgb(0_0_0_/_0.5)]">
-          <div className="mx-auto grid size-12 place-items-center rounded-lg bg-black text-xl font-black italic text-white">gw</div>
-          <h1 className="mt-5 text-center text-xl font-semibold text-white">You&apos;ve been invited to join GPTWrapper</h1>
-          <p className="mt-2 text-center text-sm text-zinc-300">{page.subtitle}</p>
+          <div className="mx-auto grid size-12 place-items-center rounded-lg bg-black text-xl font-black italic text-white">
+            gw
+          </div>
+          <h1 className="mt-5 text-center text-xl font-semibold text-white">
+            You&apos;ve been invited to join GPTWrapper
+          </h1>
+          <p className="mt-2 text-center text-sm text-zinc-300">
+            {page.subtitle}
+          </p>
           <div className="mt-5 flex items-center justify-center gap-2 text-xs text-zinc-300">
             <span className="size-2 rounded-full bg-emerald-400" />
             <span>42,000 online</span>
             <span>915,328 wrappers</span>
           </div>
-          <label className="mt-6 block text-xs font-medium text-zinc-300">Display Name</label>
-          <input className="mt-2 h-10 w-full rounded border border-[#6572ff] bg-[#26262d] px-3 text-sm text-white outline-none" placeholder="What should everyone call you?" />
-          <label className="mt-4 block text-xs font-medium text-zinc-300">Date of Birth</label>
+          <label className="mt-6 block text-xs font-medium text-zinc-300">
+            Display Name
+          </label>
+          <input
+            className="mt-2 h-10 w-full rounded border border-[#6572ff] bg-[#26262d] px-3 text-sm text-white outline-none"
+            placeholder="What should everyone call you?"
+          />
+          <label className="mt-4 block text-xs font-medium text-zinc-300">
+            Date of Birth
+          </label>
           <div className="mt-2 grid grid-cols-3 gap-2">
             {["Month", "Day", "Year"].map((label) => (
-              <button key={label} className="h-10 rounded bg-[#26262d] text-sm text-zinc-300">{label}</button>
+              <button
+                key={label}
+                className="h-10 rounded bg-[#26262d] text-sm text-zinc-300"
+              >
+                {label}
+              </button>
             ))}
           </div>
-          <Button className="mt-5 h-10 w-full rounded bg-[#5865f2] text-sm text-white hover:bg-[#6976ff]">
-            Create Account
-          </Button>
-          <p className="mt-4 text-center text-xs text-zinc-400">Already have an account? Log in</p>
         </div>
       </div>
     </section>
@@ -124,7 +146,13 @@ function SupportPage({ page }: SimpleMarketingPageProps) {
           <p className="text-sm font-semibold">GPTWrapper Help Center</p>
           <nav className="mt-6 grid gap-2">
             {nav.map((item) => (
-              <a key={item} href="#docs" className="text-sm text-zinc-500 hover:text-white">{item}</a>
+              <a
+                key={item}
+                href="#docs"
+                className="text-sm text-zinc-500 hover:text-white"
+              >
+                {item}
+              </a>
             ))}
           </nav>
         </aside>
@@ -133,17 +161,27 @@ function SupportPage({ page }: SimpleMarketingPageProps) {
             <Search className="size-4" />
             Search documentation
           </div>
-          <h1 className="mt-10 text-3xl font-medium text-zinc-100">{page.title}</h1>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-400">{page.subtitle}</p>
-          <h2 className="mt-10 text-2xl font-medium text-zinc-100">Get started with GPTWrapper</h2>
+          <h1 className="mt-10 text-3xl font-medium text-zinc-100">
+            {page.title}
+          </h1>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-400">
+            {page.subtitle}
+          </p>
+          <h2 className="mt-10 text-2xl font-medium text-zinc-100">
+            Get started with GPTWrapper
+          </h2>
           <div className="mt-5 max-w-2xl overflow-hidden rounded-md border border-white/10 bg-[#101014]">
             <div className="relative grid h-72 place-items-center overflow-hidden bg-[#080b0f]">
               <div className="bolt-horizon !top-[12rem]" aria-hidden="true" />
               <div className="relative w-[74%] rounded-xl border border-white/10 bg-[#2d2d31] p-4">
-                <p className="text-sm text-zinc-400">What will you wrap today?</p>
+                <p className="text-sm text-zinc-400">
+                  What will you wrap today?
+                </p>
                 <div className="mt-10 flex justify-between text-xs text-zinc-500">
                   <span>Plan</span>
-                  <span className="rounded-full bg-[#158cff] px-3 py-1 text-white">Build now</span>
+                  <span className="rounded-full bg-[#158cff] px-3 py-1 text-white">
+                    Build now
+                  </span>
                 </div>
               </div>
               <button className="absolute grid size-14 place-items-center rounded-full bg-white/15 backdrop-blur">
@@ -153,9 +191,14 @@ function SupportPage({ page }: SimpleMarketingPageProps) {
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {page.sections[0]?.items?.map((item) => (
-              <article key={item.title} className="rounded-md border border-white/10 bg-[#10141a] p-4">
+              <article
+                key={item.title}
+                className="rounded-md border border-white/10 bg-[#10141a] p-4"
+              >
                 <h3 className="font-medium text-white">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-400">{item.description}</p>
+                <p className="mt-2 text-sm leading-6 text-zinc-400">
+                  {item.description}
+                </p>
               </article>
             ))}
           </div>
@@ -178,14 +221,25 @@ function StatusPage({ page }: SimpleMarketingPageProps) {
     <section className="min-h-screen bg-[#161618] px-4 pb-20 pt-10">
       <div className="mx-auto max-w-[600px]">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-black italic text-white">gpt.wrapper</div>
+          <div className="text-xl font-black italic text-white">
+            gpt.wrapper
+          </div>
           <div className="flex gap-2">
-            <Button variant="outline" className="h-8 border-white/10 bg-white/5 text-xs text-white hover:bg-white/10">Help Center</Button>
-            <Button className="h-8 rounded bg-white px-3 text-xs text-black hover:bg-zinc-200">Subscribe to updates</Button>
+            <Button
+              variant="outline"
+              className="h-8 border-white/10 bg-white/5 text-xs text-white hover:bg-white/10"
+            >
+              Help Center
+            </Button>
+            <Button className="h-8 rounded bg-white px-3 text-xs text-black hover:bg-zinc-200">
+              Subscribe to updates
+            </Button>
           </div>
         </div>
         <div className="mt-6 rounded-md border border-emerald-500/55 bg-emerald-950/35 p-4">
-          <p className="text-sm font-medium text-emerald-200">All systems are green</p>
+          <p className="text-sm font-medium text-emerald-200">
+            All systems are green
+          </p>
           <div className="mt-4 rounded bg-[#132018] p-3 text-sm text-emerald-100">
             running on pure vibes bro
           </div>
@@ -199,10 +253,14 @@ function StatusPage({ page }: SimpleMarketingPageProps) {
           <p className="mt-2 text-sm text-zinc-400">{page.subtitle}</p>
           <div className="mt-6 grid gap-3">
             {page.sections[0]?.items?.map((item) => (
-              <div key={item.title} className="flex items-center justify-between rounded border border-white/10 bg-[#111114] px-4 py-3">
+              <div
+                key={item.title}
+                className="flex items-center justify-between rounded border border-white/10 bg-[#111114] px-4 py-3"
+              >
                 <span className="text-sm text-zinc-200">{item.title}</span>
                 <span className="inline-flex items-center gap-2 text-xs text-emerald-400">
-                  <span className="size-2 rounded-full bg-emerald-400" /> Operational
+                  <span className="size-2 rounded-full bg-emerald-400" />{" "}
+                  Operational
                 </span>
               </div>
             ))}
@@ -224,7 +282,10 @@ function DefaultSimplePage({ page }: SimpleMarketingPageProps) {
       {page.sections.map((section) => (
         <section key={section.title} className="page-band py-20 md:py-28">
           <div className="container">
-            <SectionHeading title={section.title} description={section.description} />
+            <SectionHeading
+              title={section.title}
+              description={section.description}
+            />
             <CardGrid items={section.items ?? []} className="mt-10" />
           </div>
         </section>

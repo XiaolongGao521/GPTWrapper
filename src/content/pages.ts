@@ -91,7 +91,6 @@ const simplePages: MarketingPage[] = [
     title: "Join the wrapper conversation",
     subtitle:
       "Meet teams, builders, and optimistic operators creating impressive surface area from one prompt box.",
-    ctaLabel: "Wrap with community",
     sections: [
       {
         title: "Social channels with the correct amount of certainty",

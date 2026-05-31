@@ -195,6 +195,10 @@ Do not add new page templates unless the current templates cannot express the co
 - `/pricing` should stay focused on pricing options only. Do not append shared FAQ, generic marketing bands, prompt CTAs, or secondary page sections unless the user explicitly asks.
 - The Monthly/Annual billing selector must be interactive and visibly update the recurring plan prices.
 
+## Community Page
+
+- `/community` should remain a compact invite-style social surface without an account-creation or community-joining CTA unless the user explicitly asks for one.
+
 ## Homepage Layout
 
 The homepage should follow this Bolt-inspired structure:
