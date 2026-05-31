@@ -19,7 +19,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { primaryNav, resourceNav } from "@/content/nav";
+import { primaryNav, resourceNav, socialNav } from "@/content/nav";
 
 function Brand() {
   return (
@@ -64,6 +64,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileWaitlistTimeout = useRef<number | null>(null);
   const hiddenShell = pathname === "/support" || pathname === "/status";
+  const desktopSocialItems = socialNav;
 
   useEffect(() => {
     return () => {
@@ -99,6 +100,22 @@ export function Header() {
           </div>
           <DesktopNav />
           <div className="flex items-center justify-end gap-2">
+            <div className="hidden items-center gap-2 text-muted-foreground md:flex">
+              {desktopSocialItems.map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  aria-label={item.title}
+                  className="inline-flex size-5 items-center justify-center transition-colors hover:text-foreground"
+                >
+                  <IconBadge
+                    icon={item.icon}
+                    className="size-5 border-0 bg-transparent text-current"
+                    iconClassName="size-4"
+                  />
+                </Link>
+              ))}
+            </div>
             <Button
               type="button"
               data-testid="header-join-waitlist"
@@ -158,6 +175,26 @@ export function Header() {
                       </p>
                       <div className="grid gap-1">
                         {resourceNav.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="flex items-center gap-3 rounded-md px-2 py-2.5 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground"
+                          >
+                            <IconBadge
+                              icon={item.icon}
+                              className="size-8 border-border bg-secondary"
+                            />
+                            {item.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      <p className="text-xs font-bold uppercase text-muted-foreground">
+                        Social
+                      </p>
+                      <div className="grid gap-1">
+                        {socialNav.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}

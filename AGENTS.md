@@ -187,7 +187,8 @@ Do not add new page templates unless the current templates cannot express the co
 
 ## Removed Community Flow
 
-- Do not add `/community`, Community navigation, social/community menu sections, social footer columns, or invite/account-creation surfaces unless the user explicitly asks to restore that flow.
+- Do not add `/community`, Community navigation, or invite/account-creation surfaces unless the user explicitly asks to restore that flow.
+- Compact Social link surfaces are allowed for the six `socialNav` entries and should use Font Awesome Brands icons.
 
 ## Homepage Layout
 

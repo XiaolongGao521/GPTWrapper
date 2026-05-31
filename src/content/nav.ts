@@ -37,6 +37,15 @@ export const resourceNav: NavItem[] = [
   },
 ];
 
+export const socialNav: NavItem[] = [
+  { title: "Discord", href: "/resources#discord", group: "company", icon: "discord" },
+  { title: "LinkedIn", href: "/resources#linkedin", group: "company", icon: "linkedin" },
+  { title: "YouTube", href: "/resources#youtube", group: "company", icon: "youtube" },
+  { title: "Twitter/X", href: "/resources#twitter", group: "company", icon: "x" },
+  { title: "Instagram", href: "/resources#instagram", group: "company", icon: "instagram" },
+  { title: "Reddit", href: "/resources#reddit", group: "company", icon: "reddit" },
+];
+
 export const companyNav: NavItem[] = [
   { title: "Enterprise", href: "/enterprise", group: "company", icon: "building" },
   { title: "Careers", href: "/careers", group: "company", icon: "briefcase" },
@@ -47,4 +56,5 @@ export const companyNav: NavItem[] = [
 export const footerGroups = [
   { title: "Resources", items: resourceNav },
   { title: "Company", items: companyNav },
+  { title: "Social", items: socialNav },
 ];

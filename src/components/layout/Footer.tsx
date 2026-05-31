@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { BrandMark } from "@/components/layout/BrandMark";
+import { IconBadge } from "@/components/marketing/IconBadge";
 import { footerGroups } from "@/content/nav";
 
 export function Footer() {
@@ -20,7 +21,7 @@ export function Footer() {
               their starting point.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {footerGroups.map((group) => (
               <div key={group.title} className="flex flex-col gap-4">
                 <h2 className="text-sm font-semibold text-foreground">{group.title}</h2>
@@ -31,6 +32,13 @@ export function Footer() {
                         href={item.href}
                         className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
                       >
+                        {group.title === "Social" ? (
+                          <IconBadge
+                            icon={item.icon}
+                            className="size-5 border-0 bg-transparent text-muted-foreground"
+                            iconClassName="size-4"
+                          />
+                        ) : null}
                         {item.title}
                       </Link>
                     </li>
