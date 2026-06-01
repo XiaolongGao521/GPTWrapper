@@ -10,7 +10,7 @@ export const resourceNav: NavItem[] = [
   {
     title: "Docs & Help Center",
     href: "/resources",
-    description: "The canonical operating manual for wrapper-forward teams.",
+    description: "Do you really need help typing into a prompt box?",
     group: "resources",
     icon: "bookOpen",
   },

@@ -137,7 +137,7 @@ export const resourcesPage: MarketingPage = {
   slug: "resources",
   template: "resources",
   navGroup: "resources",
-  title: "Resources for teams wrapping the obvious",
+  title: "Do you really need help typing into a prompt box?",
   subtitle:
     "Docs, notes, and status references for a product surface small enough to understand in one sitting.",
   ctaLabel: "Open the wrapper",
