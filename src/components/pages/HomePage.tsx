@@ -1,7 +1,6 @@
-import { ArrowRight, BarChart3, Check, Database, KeyRound, Layers3, LockKeyhole, Play, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Hero } from "@/components/marketing/Hero";
-import { LogoStrip } from "@/components/marketing/LogoStrip";
 
 const systems = [
   ["Boardroom", "Executive Memo System"],
@@ -9,14 +8,6 @@ const systems = [
   ["OpsDesk", "Internal Update System"],
   ["Roadmap", "Product Decision System"],
   ["Procure", "Enterprise Approval System"],
-];
-
-const roles = [
-  ["Product managers", "Go from scattered notes to a stakeholder-ready direction before the calendar hold ends."],
-  ["Founders", "Turn a vague market thought into a memo, pitch, or strategic update with enough structure to circulate."],
-  ["Marketers", "Create campaign language that sounds aligned without opening six separate planning docs."],
-  ["Agencies", "Deliver polished first drafts faster while keeping the wrapper surface calmly on brand."],
-  ["Students & builders", "Make the assignment, side project, or portfolio note sound like it had a product team."],
 ];
 
 function ShowcaseCards() {
@@ -145,111 +136,6 @@ function AgentPanels() {
   );
 }
 
-function ScaleBand() {
-  const cards = [
-    ["Unlimited wrapper contexts", Database],
-    ["Enterprise-grade phrasing", LockKeyhole],
-    ["User intent management", KeyRound],
-    ["Reviewable output posture", Check],
-    ["Publishing-grade handoff", Layers3],
-  ];
-
-  return (
-    <section className="page-band py-24">
-      <div className="container">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-semibold leading-tight text-foreground md:text-5xl">
-            Everything you need to scale. <span className="text-muted-foreground">Built in.</span>
-          </h2>
-          <p className="mt-5 text-base leading-7 text-muted-foreground">
-            Stop stitching together positioning docs. GPTWrapper gives you the
-            workflow surface, tone controls, and result framing inside one box.
-          </p>
-        </div>
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {cards.map(([title, Icon], index) => (
-            <article
-              key={title as string}
-              className={index > 2 ? "bolt-card p-6 md:col-span-1" : "bolt-card min-h-56 overflow-hidden p-6"}
-            >
-              <h3 className="text-lg font-semibold text-foreground">{title as string}</h3>
-              <div className="mt-8 flex h-28 items-center justify-center rounded-md bg-secondary">
-                <Icon className="size-14 text-primary" />
-              </div>
-            </article>
-          ))}
-          <article className="bolt-card p-6 md:col-span-2">
-            <h3 className="text-lg font-semibold text-foreground">Hosting with analytics and custom domains</h3>
-            <div className="mt-6 h-32 rounded-md bg-[linear-gradient(135deg,#08213a,#158cff_58%,#dbeafe)] p-5 text-right text-2xl font-semibold italic text-white">
-              Publish
-            </div>
-          </article>
-        </div>
-        <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-6 text-muted-foreground">
-          GPTWrapper gives you everything you need inside one familiar interface.
-          No extra accounts, no steep learning curve.
-        </p>
-      </div>
-    </section>
-  );
-}
-
-function RoleBand() {
-  return (
-    <section className="page-band py-24">
-      <div className="container">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm text-muted-foreground">Whatever your role</p>
-          <h2 className="mt-3 text-4xl font-semibold text-foreground md:text-5xl">
-            GPTWrapper gives you superpowers
-          </h2>
-          <p className="mt-4 text-base leading-7 text-muted-foreground">
-            From idea to usable output, GPTWrapper adapts to the way you work
-            while keeping every vision neatly wrapped.
-          </p>
-        </div>
-        <div className="mt-12 grid gap-4 md:grid-cols-5">
-          {roles.map(([title, description]) => (
-            <article key={title} className="bolt-card p-5">
-              <h3 className="text-base font-semibold text-foreground">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">{description}</p>
-            </article>
-          ))}
-        </div>
-        <div className="mt-5 grid gap-4 md:grid-cols-[1fr_1fr_1fr]">
-          <div className="bolt-panel p-5">
-            <div className="flex items-center justify-between text-sm text-muted-foreground">
-              <span>Version history</span>
-              <BarChart3 className="size-4" />
-            </div>
-            <div className="mt-5 grid gap-3">
-              {["Launched positioning", "Wrapped stakeholder note", "Polished final answer"].map((item) => (
-                <div key={item} className="rounded-md bg-secondary px-3 py-2 text-sm text-foreground">{item}</div>
-              ))}
-            </div>
-          </div>
-          <div className="bolt-panel p-5">
-            <div className="flex items-center justify-between text-sm text-muted-foreground">
-              <span>Publish your project</span>
-              <Sparkles className="size-4" />
-            </div>
-            <div className="mt-5 rounded-md bg-secondary p-4 text-sm text-foreground">
-              Up to date. Share it with stakeholders and coworkers.
-            </div>
-          </div>
-          <div className="bolt-panel p-5">
-            <div className="flex items-center justify-between text-sm text-muted-foreground">
-              <span>Unique visitors</span>
-              <Play className="size-4" />
-            </div>
-            <div className="mt-5 h-28 rounded-md bg-[linear-gradient(180deg,rgba(21,140,255,.45),rgba(21,140,255,.05))]" />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function HomePage() {
   return (
     <>
@@ -260,10 +146,7 @@ export function HomePage() {
         showComposer
       />
       <ShowcaseCards />
-      <LogoStrip />
       <AgentPanels />
-      <ScaleBand />
-      <RoleBand />
     </>
   );
 }

@@ -108,7 +108,7 @@ Most pages should still be generated from content configuration, but the configu
 
 Use a very small set of reusable page templates:
 
-- `HomePage`: hero prompt, proof strip, builder feature sections, examples, stats, final prompt CTA.
+- `HomePage`: hero prompt, followed by exactly two post-prompt marketing sections.
 - `SimpleMarketingPage`: enterprise, careers, status, and other concise pages.
 - `ResourcesPage`: consolidated resources landing page with docs, blog, and status links.
 - `BlogPage`: optional lightweight listing if `/blog` is kept.
@@ -207,19 +207,17 @@ Hero
   Primary wrap/build action
   Small secondary mode control, if useful
 
-ProofStrip
-  Original brand-like names or short credibility labels
-
-FeatureSections
+PostPromptSectionOne
   Serious builder-style product panels
   Overstated claims about wrapping prompts
   Small UI screenshots or component-like mockups, not generic cards
 
-UseCaseBand
-  A few role or workflow examples, kept on the homepage
+PostPromptSectionTwo
+  Capability and credibility panels
+  Joke credibility metrics, if needed, contained inside this section
 
-StatsBand
-  Joke credibility metrics
+Do not append additional proof, use-case, stats, FAQ, or final prompt CTA
+sections after the prompt composer unless the user explicitly asks.
 
 Footer
   Logo
