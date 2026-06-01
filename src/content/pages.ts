@@ -137,15 +137,15 @@ export const resourcesPage: MarketingPage = {
   slug: "resources",
   template: "resources",
   navGroup: "resources",
-  title: "Do you really need help typing into a prompt box?",
+  title: "Documentation",
   subtitle:
-    "Docs, notes, and status references for a product surface small enough to understand in one sitting.",
+    "A formal guide to selecting the prompt box with a mouse, then using a keyboard to make words appear inside it.",
   ctaLabel: "Open the wrapper",
   sections: [
     {
-      title: "Start with the essentials",
+      title: "Documentation index",
       description:
-        "Everything here supports the same compact workflow: describe the work, wrap the prompt, ship the posture.",
+        "Everything here supports the same compact workflow: click the box, type the thought, wrap the posture.",
       items: resourceCards,
     },
   ],

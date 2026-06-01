@@ -8,9 +8,9 @@ export const primaryNav: NavItem[] = [
 
 export const resourceNav: NavItem[] = [
   {
-    title: "Docs & Help Center",
+    title: "Documentation",
     href: "/resources",
-    description: "Do you really need help typing into a prompt box?",
+    description: "Official guidance for clicking the box and pressing keys.",
     group: "resources",
     icon: "bookOpen",
   },

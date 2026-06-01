@@ -54,8 +54,10 @@ export function ResourcesPage({ page }: ResourcesPageProps) {
         </div>
 
         <p className="mx-auto mt-10 max-w-xl text-center text-sm leading-6 text-muted-foreground">
-          Most resource paths route back to one operating principle: put context
-          in the box, press the button, and give the result a name.
+          To operate GPTWrapper, move the mouse until the pointer reaches the
+          prompt box, click once so the computer understands your ambition, then
+          use the keyboard to press letters into words. When the words resemble
+          a request, press the button and consider the workflow documented.
         </p>
       </div>
     </section>

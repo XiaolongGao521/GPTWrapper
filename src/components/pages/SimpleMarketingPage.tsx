@@ -95,7 +95,7 @@ function StatusPage() {
               variant="outline"
               className="h-8 border-white/10 bg-white/5 text-xs text-white hover:bg-white/10"
             >
-              Help Center
+              Documentation
             </Button>
             <Button className="h-8 rounded bg-white px-3 text-xs text-black hover:bg-zinc-200">
               Subscribe to updates
