@@ -16,6 +16,9 @@ const billingOptions: { id: BillingCycle; label: string }[] = [
   { id: "annual", label: "Annual" },
 ];
 
+const cardSectionClass = "p-5";
+const cardSectionDividerClass = "border-t border-border";
+
 const tiers = [
   {
     id: "curious",
@@ -132,7 +135,7 @@ export function PricingPage({ page }: PricingPageProps) {
           <p className="mt-3 text-xs font-medium text-muted-foreground">Save up to 28% with annual wrapping</p>
         </div>
 
-        <div className="mt-12 grid gap-4 lg:grid-cols-4">
+        <div className="mt-12 grid gap-4 lg:grid-cols-4 lg:gap-y-0">
           {tiers.map((tier) => {
             const price = tier.pricing[billingCycle];
 
@@ -140,12 +143,12 @@ export function PricingPage({ page }: PricingPageProps) {
               <article
                 key={tier.id}
                 className={cn(
-                  "flex min-h-[420px] flex-col rounded-lg border border-border bg-card p-5 text-card-foreground",
+                  "grid overflow-hidden rounded-lg border border-border bg-card text-card-foreground lg:row-span-4 lg:grid-rows-subgrid",
                   tier.featured && "border-primary/60 shadow-[0_0_42px_rgb(21_140_255_/_0.16)]",
                 )}
               >
-                <div className="flex items-start justify-between gap-3">
-                  <div>
+                <div className={cn("flex items-start justify-between gap-3", cardSectionClass)}>
+                  <div className="min-w-0">
                     <h2 className="text-sm font-semibold text-foreground">{tier.name}</h2>
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">{tier.description}</p>
                   </div>
@@ -155,41 +158,43 @@ export function PricingPage({ page }: PricingPageProps) {
                     </span>
                   ) : null}
                 </div>
-                <div className="mt-8">
+                <div className={cn("flex items-baseline", cardSectionClass, cardSectionDividerClass)}>
                   <span className="text-4xl font-semibold text-foreground">{price.price}</span>
                   {price.period ? (
                     <span className="ml-2 text-xs leading-4 text-muted-foreground">{price.period}</span>
                   ) : null}
                 </div>
-                {tier.waitlist ? (
-                  <JoinWaitlistButton
-                    data-testid={`pricing-${tier.id}-join-waitlist`}
-                    className={cn(
-                      "mt-6 h-9 w-full rounded-md text-sm font-medium",
-                      tier.featured
-                        ? "bolt-blue-button"
-                        : "border-border bg-secondary text-foreground hover:bg-muted",
-                    )}
-                    variant={tier.featured ? "default" : "outline"}
-                  >
-                    {tier.cta}
-                  </JoinWaitlistButton>
-                ) : (
-                  <Button
-                    asChild
-                    data-testid="pricing-enterprise-talk-sales"
-                    className={cn(
-                      "mt-6 h-9 w-full rounded-md text-sm font-medium",
-                      tier.featured
-                        ? "bolt-blue-button"
-                        : "border-border bg-secondary text-foreground hover:bg-muted",
-                    )}
-                    variant={tier.featured ? "default" : "outline"}
-                  >
-                    <Link href={tier.href}>{tier.cta}</Link>
-                  </Button>
-                )}
-                <div className="mt-7 border-t border-border pt-5">
+                <div className={cn(cardSectionClass, cardSectionDividerClass)}>
+                  {tier.waitlist ? (
+                    <JoinWaitlistButton
+                      data-testid={`pricing-${tier.id}-join-waitlist`}
+                      className={cn(
+                        "h-9 w-full rounded-md text-sm font-medium",
+                        tier.featured
+                          ? "bolt-blue-button"
+                          : "border-border bg-secondary text-foreground hover:bg-muted",
+                      )}
+                      variant={tier.featured ? "default" : "outline"}
+                    >
+                      {tier.cta}
+                    </JoinWaitlistButton>
+                  ) : (
+                    <Button
+                      asChild
+                      data-testid="pricing-enterprise-talk-sales"
+                      className={cn(
+                        "h-9 w-full rounded-md text-sm font-medium",
+                        tier.featured
+                          ? "bolt-blue-button"
+                          : "border-border bg-secondary text-foreground hover:bg-muted",
+                      )}
+                      variant={tier.featured ? "default" : "outline"}
+                    >
+                      <Link href={tier.href}>{tier.cta}</Link>
+                    </Button>
+                  )}
+                </div>
+                <div className={cn("flex flex-col", cardSectionClass, cardSectionDividerClass)}>
                   <p className="text-xs font-medium text-muted-foreground">You get:</p>
                   <ul className="mt-4 grid gap-3">
                     {tier.features.map((feature) => (

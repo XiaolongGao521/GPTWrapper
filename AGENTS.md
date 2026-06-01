@@ -184,6 +184,7 @@ Do not add new page templates unless the current templates cannot express the co
 
 - `/pricing` should stay focused on pricing options only. Do not append shared FAQ, generic marketing bands, prompt CTAs, or secondary page sections unless the user explicitly asks.
 - The Monthly/Annual billing selector must be interactive and visibly update the recurring plan prices.
+- Pricing cards should keep their internal sections aligned with content-sized shared layout tracks and consistent section padding. Avoid fixed card heights or hard-coded section dimensions for alignment.
 
 ## Removed Community Flow
 
