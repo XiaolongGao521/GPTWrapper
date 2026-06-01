@@ -5,6 +5,7 @@ import { PromptComposer } from "@/components/marketing/PromptComposer";
 import { SectionHeading } from "@/components/marketing/SectionHeading";
 import { Button } from "@/components/ui/button";
 import type { MarketingPage } from "@/content/types";
+import { cn } from "@/lib/utils";
 
 type SimpleMarketingPageProps = {
   page: MarketingPage;
@@ -56,7 +57,14 @@ function CareersPage({ page }: SimpleMarketingPageProps) {
           <h2 className="text-center text-4xl font-semibold text-foreground">
             Open roles
           </h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div
+            className={cn(
+              "mt-10 grid gap-4",
+              roles.length === 1
+                ? "mx-auto max-w-xl md:grid-cols-1"
+                : "md:grid-cols-3",
+            )}
+          >
             {roles.map((role) => (
               <article key={role.title} className="bolt-card p-6">
                 <h3 className="text-xl font-semibold text-foreground">

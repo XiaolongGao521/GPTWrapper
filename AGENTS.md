@@ -179,6 +179,11 @@ Do not add new page templates unless the current templates cannot express the co
 - `/enterprise` intentionally uses an oversized, viewport-filling prompt composer that starts below the hero headline and occupies nearly the full remaining first-screen width and height.
 - Keep this oversized composer scoped to the Enterprise page unless the user explicitly asks to resize the shared prompt surface across the site.
 
+## Careers Page
+
+- `/careers` should show exactly one open role: `Philanthropist`.
+- The Philanthropist role should ask for no-strings-attached, non-dilutive money for the company in professional language, with no risk, stakes, repayment expectation, governance rights, or reciprocal consideration offered by GPTWrapper.
+
 ## Pricing Page
 
 - `/pricing` should stay focused on pricing options only. Do not append shared FAQ, generic marketing bands, prompt CTAs, or secondary page sections unless the user explicitly asks.

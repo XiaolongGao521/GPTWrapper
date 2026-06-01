@@ -89,22 +89,10 @@ const simplePages: MarketingPage[] = [
           "We hire people who can keep a straight face while making one interaction feel like a platform.",
         items: [
           {
-            title: "Prompt Surface Designer",
+            title: "Philanthropist",
             description:
-              "Shape the tiny moments that make the box feel considered.",
-            icon: "wand",
-          },
-          {
-            title: "Enterprise Vibes Lead",
-            description:
-              "Turn simple product behavior into language large companies can approve.",
-            icon: "building",
-          },
-          {
-            title: "Wrapper Success Manager",
-            description:
-              "Help customers discover that the workflow was mostly the prompt.",
-            icon: "heart",
+              "Provide non-dilutive, no-strings-attached capital to support GPTWrapper's continued operations, with no governance rights, risk exposure, repayment expectation, or reciprocal consideration from the company.",
+            icon: "handshake",
           },
         ],
       },
