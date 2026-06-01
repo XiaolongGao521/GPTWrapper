@@ -1,7 +1,7 @@
 import { CardGrid } from "@/components/marketing/CardGrid";
 import { Faq } from "@/components/marketing/Faq";
 import { Hero } from "@/components/marketing/Hero";
-import { PromptComposer } from "@/components/marketing/PromptComposer";
+import { EnterprisePromptComposer } from "@/components/pages/EnterprisePromptComposer";
 import { SectionHeading } from "@/components/marketing/SectionHeading";
 import { Button } from "@/components/ui/button";
 import type { MarketingPage } from "@/content/types";
@@ -20,14 +20,7 @@ function EnterprisePage() {
         <h1 className="mx-auto max-w-5xl text-balance text-4xl font-medium leading-tight text-foreground sm:text-5xl md:text-7xl">
           We Made The Box Bigger for The Big Enterprise
         </h1>
-        <div className="mt-10 flex min-h-[24rem] flex-1">
-          <PromptComposer
-            className="flex min-h-0 max-w-none flex-1 flex-col overflow-y-auto"
-            textareaClassName="min-h-[18rem] flex-1"
-            placeholder="Describe the enterprise wrapper your organization can approve..."
-            submitLabel="Wrap for enterprise"
-          />
-        </div>
+        <EnterprisePromptComposer />
       </div>
     </section>
   );
