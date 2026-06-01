@@ -76,7 +76,6 @@ Primary routes:
 
 /resources
 /blog
-/support
 /status
 
 /legal/privacy
@@ -110,8 +109,8 @@ Most pages should still be generated from content configuration, but the configu
 Use a very small set of reusable page templates:
 
 - `HomePage`: hero prompt, proof strip, builder feature sections, examples, stats, final prompt CTA.
-- `SimpleMarketingPage`: enterprise, careers, support, status, and other concise pages.
-- `ResourcesPage`: consolidated resources landing page with docs, blog, support, and status links.
+- `SimpleMarketingPage`: enterprise, careers, status, and other concise pages.
+- `ResourcesPage`: consolidated resources landing page with docs, blog, and status links.
 - `BlogPage`: optional lightweight listing if `/blog` is kept.
 - `PricingPage`: simple pricing cards with deadpan tier positioning.
 - `LegalPage`: plain legal content layout for privacy and terms only.

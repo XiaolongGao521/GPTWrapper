@@ -91,7 +91,7 @@ const tiers = [
     featured: false,
     features: [
       "Governance narrative",
-      "Rollout posture support",
+      "Rollout posture guidance",
       "Department mapping",
       "Executive-ready wrapper review",
     ],

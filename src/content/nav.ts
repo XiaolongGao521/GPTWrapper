@@ -22,13 +22,6 @@ export const resourceNav: NavItem[] = [
     icon: "newspaper",
   },
   {
-    title: "Support",
-    href: "/support",
-    description: "Answers for keeping one prompt box feeling fully supported.",
-    group: "resources",
-    icon: "messages",
-  },
-  {
     title: "Status",
     href: "/status",
     description: "Operational posture for the surface, the button, and the vibes.",

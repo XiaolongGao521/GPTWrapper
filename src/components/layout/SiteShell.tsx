@@ -10,7 +10,7 @@ type SiteShellProps = {
 
 export function SiteShell({ children }: SiteShellProps) {
   const pathname = usePathname();
-  const hideFooter = pathname === "/support" || pathname === "/status";
+  const hideFooter = pathname === "/status";
 
   return (
     <>

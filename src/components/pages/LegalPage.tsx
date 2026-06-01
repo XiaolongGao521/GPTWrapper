@@ -44,7 +44,7 @@ export function LegalPage({ page }: LegalPageProps) {
                 </p>
                 <h3>5. Contact us</h3>
                 <p>
-                  For privacy questions, contact the team through the support
+                  For privacy questions, contact the team through the resources
                   surface and include enough context for a confident response.
                 </p>
               </>
@@ -58,7 +58,7 @@ export function LegalPage({ page }: LegalPageProps) {
                 <h2>Overview</h2>
                 <p>
                   These terms govern your use of GPTWrapper, including the
-                  prompt composer, wrapped output, marketing pages, and support
+                  prompt composer, wrapped output, marketing pages, and resource
                   surfaces.
                 </p>
                 <h3>Use of output</h3>
@@ -75,7 +75,7 @@ export function LegalPage({ page }: LegalPageProps) {
                 <h3>Changes</h3>
                 <p>
                   GPTWrapper may revise the wrapper, product language, button
-                  labels, or support materials as the roadmap demands.
+                  labels, or resource materials as the roadmap demands.
                 </p>
               </>
             )}

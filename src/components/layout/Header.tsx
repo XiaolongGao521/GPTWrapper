@@ -63,7 +63,7 @@ export function Header() {
   const [waitlistOpen, setWaitlistOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileWaitlistTimeout = useRef<number | null>(null);
-  const hiddenShell = pathname === "/support" || pathname === "/status";
+  const hiddenShell = pathname === "/status";
   const desktopSocialItems = socialNav;
 
   useEffect(() => {

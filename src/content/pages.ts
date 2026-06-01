@@ -111,42 +111,6 @@ const simplePages: MarketingPage[] = [
     ],
   },
   {
-    slug: "support",
-    template: "simple",
-    navGroup: "resources",
-    title: "Support for the surface, the button, and the result",
-    subtitle:
-      "Answers for teams keeping a compact AI workflow polished, legible, and ready for review.",
-    ctaLabel: "Get support",
-    sections: [
-      {
-        title: "Common support paths",
-        description:
-          "Most issues resolve by adding context, tightening the ask, or pressing the same button again with more conviction.",
-        items: [
-          {
-            title: "Prompt intake",
-            description:
-              "Clarify audience, constraints, and desired outcome before wrapping.",
-            icon: "clipboard",
-          },
-          {
-            title: "Output posture",
-            description:
-              "Make the response sound finished enough for a doc, deck, or stakeholder thread.",
-            icon: "sparkles",
-          },
-          {
-            title: "Team rollout",
-            description:
-              "Explain why the box is enough for version one.",
-            icon: "users",
-          },
-        ],
-      },
-    ],
-  },
-  {
     slug: "status",
     template: "simple",
     navGroup: "resources",
@@ -187,7 +151,7 @@ export const resourcesPage: MarketingPage = {
   navGroup: "resources",
   title: "Resources for teams wrapping the obvious",
   subtitle:
-    "Docs, notes, support, and status references for a product surface small enough to understand in one sitting.",
+    "Docs, notes, and status references for a product surface small enough to understand in one sitting.",
   ctaLabel: "Open the wrapper",
   sections: [
     {
@@ -253,7 +217,7 @@ const legalPages: MarketingPage[] = [
           {
             title: "Operational metadata",
             description:
-              "Basic interaction details may support product quality, availability, and abuse prevention.",
+              "Basic interaction details may improve product quality, availability, and abuse prevention.",
             icon: "activity",
           },
           {

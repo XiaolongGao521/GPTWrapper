@@ -1,5 +1,3 @@
-import { Play, Search } from "lucide-react";
-
 import { CardGrid } from "@/components/marketing/CardGrid";
 import { Faq } from "@/components/marketing/Faq";
 import { Hero } from "@/components/marketing/Hero";
@@ -76,98 +74,7 @@ function CareersPage({ page }: SimpleMarketingPageProps) {
   );
 }
 
-function SupportPage({ page }: SimpleMarketingPageProps) {
-  const nav = [
-    "Get started with GPTWrapper",
-    "Introduction to wrapping",
-    "Quickstart guide",
-    "Learn first and reduce overthinking",
-    "Working in a box",
-    "Choose a wrapper",
-    "Use context",
-    "Collaborate with others",
-    "Share your project",
-    "Supported technologies",
-  ];
-
-  return (
-    <section className="min-h-screen bg-[#080b0f] text-white">
-      <div className="grid lg:grid-cols-[260px_1fr_220px]">
-        <aside className="hidden border-r border-white/10 px-5 py-6 lg:block">
-          <p className="text-sm font-semibold">GPTWrapper Help Center</p>
-          <nav className="mt-6 grid gap-2">
-            {nav.map((item) => (
-              <a
-                key={item}
-                href="#docs"
-                className="text-sm text-zinc-500 hover:text-white"
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
-        </aside>
-        <main id="docs" className="px-6 py-10 lg:px-12">
-          <div className="flex max-w-3xl items-center gap-2 rounded-md border border-white/10 bg-[#10141a] px-3 py-2 text-sm text-zinc-500">
-            <Search className="size-4" />
-            Search documentation
-          </div>
-          <h1 className="mt-10 text-3xl font-medium text-zinc-100">
-            {page.title}
-          </h1>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-400">
-            {page.subtitle}
-          </p>
-          <h2 className="mt-10 text-2xl font-medium text-zinc-100">
-            Get started with GPTWrapper
-          </h2>
-          <div className="mt-5 max-w-2xl overflow-hidden rounded-md border border-white/10 bg-[#101014]">
-            <div className="relative grid h-72 place-items-center overflow-hidden bg-[#080b0f]">
-              <div className="bolt-horizon !top-[12rem]" aria-hidden="true" />
-              <div className="relative w-[74%] rounded-xl border border-white/10 bg-[#2d2d31] p-4">
-                <p className="text-sm text-zinc-400">
-                  What will you wrap today?
-                </p>
-                <div className="mt-10 flex justify-between text-xs text-zinc-500">
-                  <span>Plan</span>
-                  <span className="rounded-full bg-[#158cff] px-3 py-1 text-white">
-                    Build now
-                  </span>
-                </div>
-              </div>
-              <button className="absolute grid size-14 place-items-center rounded-full bg-white/15 backdrop-blur">
-                <Play className="size-6 fill-white" />
-              </button>
-            </div>
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {page.sections[0]?.items?.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-md border border-white/10 bg-[#10141a] p-4"
-              >
-                <h3 className="font-medium text-white">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-400">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </main>
-        <aside className="hidden border-l border-white/10 px-5 py-6 text-sm text-zinc-500 lg:block">
-          <p className="font-medium text-zinc-300">On this page</p>
-          <div className="mt-5 grid gap-3">
-            <a href="#docs">Get started</a>
-            <a href="#docs">What&apos;s new</a>
-            <a href="#docs">Release notes</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-  );
-}
-
-function StatusPage({ page }: SimpleMarketingPageProps) {
+function StatusPage() {
   return (
     <section className="min-h-screen bg-[#161618] px-4 pb-20 pt-10">
       <div className="mx-auto max-w-[600px]">
@@ -195,27 +102,8 @@ function StatusPage({ page }: SimpleMarketingPageProps) {
             running on pure vibes bro
           </div>
           <p className="mt-3 text-xs leading-5 text-emerald-100/70">
-            The prompt surface, response posture, and visible confidence layer
-            are operating within vibe-forward expectations.
+            The better question to ask, &quot;is GPT down right now?&quot;
           </p>
-        </div>
-        <div className="mt-6 rounded-md border border-white/10 bg-[#1b1b1f] p-4">
-          <h1 className="text-2xl font-medium text-zinc-100">{page.title}</h1>
-          <p className="mt-2 text-sm text-zinc-400">{page.subtitle}</p>
-          <div className="mt-6 grid gap-3">
-            {page.sections[0]?.items?.map((item) => (
-              <div
-                key={item.title}
-                className="flex items-center justify-between rounded border border-white/10 bg-[#111114] px-4 py-3"
-              >
-                <span className="text-sm text-zinc-200">{item.title}</span>
-                <span className="inline-flex items-center gap-2 text-xs text-emerald-400">
-                  <span className="size-2 rounded-full bg-emerald-400" />{" "}
-                  Operational
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
@@ -255,12 +143,8 @@ export function SimpleMarketingPage({ page }: SimpleMarketingPageProps) {
     return <CareersPage page={page} />;
   }
 
-  if (page.slug === "support") {
-    return <SupportPage page={page} />;
-  }
-
   if (page.slug === "status") {
-    return <StatusPage page={page} />;
+    return <StatusPage />;
   }
 
   return <DefaultSimplePage page={page} />;
