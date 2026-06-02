@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BrandMark } from "@/components/layout/BrandMark";
 import { IconBadge } from "@/components/marketing/IconBadge";
 import { footerGroups } from "@/content/nav";
+import { externalLinkProps } from "@/lib/links";
 
 export function Footer() {
   return (
@@ -31,6 +32,7 @@ export function Footer() {
                       <Link
                         href={item.href}
                         className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                        {...externalLinkProps(item.href)}
                       >
                         {group.title === "Social" ? (
                           <IconBadge

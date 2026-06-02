@@ -20,6 +20,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { primaryNav, resourceNav, socialNav } from "@/content/nav";
+import { externalLinkProps } from "@/lib/links";
 
 function Brand() {
   return (
@@ -107,6 +108,7 @@ export function Header() {
                   href={item.href}
                   aria-label={item.title}
                   className="inline-flex size-5 items-center justify-center transition-colors hover:text-foreground"
+                  {...externalLinkProps(item.href)}
                 >
                   <IconBadge
                     icon={item.icon}
@@ -179,6 +181,7 @@ export function Header() {
                             key={item.href}
                             href={item.href}
                             className="flex items-center gap-3 rounded-md px-2 py-2.5 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground"
+                            {...externalLinkProps(item.href)}
                           >
                             <IconBadge
                               icon={item.icon}

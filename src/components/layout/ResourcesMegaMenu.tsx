@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { resourceNav, socialNav } from "@/content/nav";
 import type { NavItem } from "@/content/types";
+import { externalLinkProps } from "@/lib/links";
 
 function MenuLink({ item }: { item: NavItem }) {
   return (
@@ -20,6 +21,7 @@ function MenuLink({ item }: { item: NavItem }) {
       <Link
         href={item.href}
         className="group flex items-center gap-3 rounded-md px-0 py-2 text-left transition-colors hover:text-foreground focus:text-foreground focus:outline-none"
+        {...externalLinkProps(item.href)}
       >
         <IconBadge
           icon={item.icon}

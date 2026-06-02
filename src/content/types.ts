@@ -34,7 +34,6 @@ export type IconName =
   | "newspaper"
   | "play"
   | "puzzle"
-  | "reddit"
   | "rocket"
   | "search"
   | "send"
@@ -43,8 +42,7 @@ export type IconName =
   | "sparkles"
   | "users"
   | "wand"
-  | "x"
-  | "youtube";
+  | "x";
 
 export type NavItem = {
   title: string;

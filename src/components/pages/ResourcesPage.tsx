@@ -3,6 +3,7 @@ import Link from "next/link";
 import { IconBadge } from "@/components/marketing/IconBadge";
 import { socialNav } from "@/content/nav";
 import type { MarketingPage } from "@/content/types";
+import { externalLinkProps } from "@/lib/links";
 
 type ResourcesPageProps = {
   page: MarketingPage;
@@ -37,9 +38,9 @@ export function ResourcesPage({ page }: ResourcesPageProps) {
               {socialNav.map((item) => (
                 <Link
                   key={item.title}
-                  id={item.href.split("#")[1]}
                   href={item.href}
                   className="flex items-center gap-3 py-2 text-foreground hover:text-primary"
+                  {...externalLinkProps(item.href)}
                 >
                   <IconBadge
                     icon={item.icon}

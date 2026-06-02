@@ -3,9 +3,7 @@ import {
   faDiscord,
   faInstagram,
   faLinkedin,
-  faReddit,
   faXTwitter,
-  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -46,15 +44,13 @@ import {
 import type { IconName } from "@/content/types";
 import { cn } from "@/lib/utils";
 
-type BrandIconName = "discord" | "instagram" | "linkedin" | "reddit" | "x" | "youtube";
+type BrandIconName = "discord" | "instagram" | "linkedin" | "x";
 
 const brandIconMap: Record<BrandIconName, IconDefinition> = {
   discord: faDiscord,
   instagram: faInstagram,
   linkedin: faLinkedin,
-  reddit: faReddit,
   x: faXTwitter,
-  youtube: faYoutube,
 };
 
 const lucideIconMap: Record<Exclude<IconName, BrandIconName>, LucideIcon> = {

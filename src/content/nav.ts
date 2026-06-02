@@ -31,12 +31,20 @@ export const resourceNav: NavItem[] = [
 ];
 
 export const socialNav: NavItem[] = [
-  { title: "Discord", href: "/resources#discord", group: "company", icon: "discord" },
-  { title: "LinkedIn", href: "/resources#linkedin", group: "company", icon: "linkedin" },
-  { title: "YouTube", href: "/resources#youtube", group: "company", icon: "youtube" },
-  { title: "Twitter/X", href: "/resources#twitter", group: "company", icon: "x" },
-  { title: "Instagram", href: "/resources#instagram", group: "company", icon: "instagram" },
-  { title: "Reddit", href: "/resources#reddit", group: "company", icon: "reddit" },
+  {
+    title: "Instagram",
+    href: "https://www.instagram.com/sillyavatar/",
+    group: "company",
+    icon: "instagram",
+  },
+  {
+    title: "LinkedIn",
+    href: "https://www.linkedin.com/company/sillyavatar",
+    group: "company",
+    icon: "linkedin",
+  },
+  { title: "X", href: "https://x.com/TheSillyAvatar", group: "company", icon: "x" },
+  { title: "Discord", href: "https://discord.gg/gWDene2Y7P", group: "company", icon: "discord" },
 ];
 
 export const companyNav: NavItem[] = [
