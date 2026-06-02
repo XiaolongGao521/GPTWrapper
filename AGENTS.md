@@ -97,7 +97,7 @@ Pricing
 
 ```txt
 Resources
-  Docs & Help Center
+  Documentation
   Blog
   Status
 ```
@@ -157,6 +157,7 @@ src/
       Faq.tsx
 
     pages/
+      DocumentationTutorial.tsx
       HomePage.tsx
       SimpleMarketingPage.tsx
       ResourcesPage.tsx
@@ -173,6 +174,12 @@ src/
 ```
 
 Do not add new page templates unless the current templates cannot express the content cleanly.
+
+## Documentation Page
+
+- `/resources` labels the docs/help surface as `Documentation`, not `Docs & Help Center`.
+- `/resources` includes an interactive prompt-box tutorial that gates the user through mouse validation, keyboard validation, and typing exactly `I love AI` into the prompt box.
+- If the prompt-box challenge receives text that diverges from `I love AI`, it must show the exact notification `nope, that's not it`.
 
 ## Enterprise Page
 

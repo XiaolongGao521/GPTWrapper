@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { IconBadge } from "@/components/marketing/IconBadge";
+import { DocumentationTutorial } from "@/components/pages/DocumentationTutorial";
 import { socialNav } from "@/content/nav";
 import type { MarketingPage } from "@/content/types";
 import { externalLinkProps } from "@/lib/links";
@@ -54,12 +55,7 @@ export function ResourcesPage({ page }: ResourcesPageProps) {
           </div>
         </div>
 
-        <p className="mx-auto mt-10 max-w-xl text-center text-sm leading-6 text-muted-foreground">
-          To operate GPTWrapper, move the mouse until the pointer reaches the
-          prompt box, click once so the computer understands your ambition, then
-          use the keyboard to press letters into words. When the words resemble
-          a request, press the button and consider the workflow documented.
-        </p>
+        <DocumentationTutorial />
       </div>
     </section>
   );
