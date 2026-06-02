@@ -91,7 +91,7 @@ const simplePages: MarketingPage[] = [
           {
             title: "Philanthropist",
             description:
-              "Provide non-dilutive, no-strings-attached capital to support GPTWrapper's continued operations, with no governance rights, risk exposure, repayment expectation, or reciprocal consideration from the company.",
+              "Provide non-dilutive, no-strings-attached capital to support GPTWrapper's continued operations, with no risk exposure from the company.",
             icon: "handshake",
           },
         ],
@@ -114,12 +114,14 @@ const simplePages: MarketingPage[] = [
         items: [
           {
             title: "Prompt composer",
-            description: "Operational. Accepting vague requests with calm focus.",
+            description:
+              "Operational. Accepting vague requests with calm focus.",
             icon: "activity",
           },
           {
             title: "Wrapper language",
-            description: "Operational. Adding context, constraints, and next steps.",
+            description:
+              "Operational. Adding context, constraints, and next steps.",
             icon: "messages",
           },
           {
